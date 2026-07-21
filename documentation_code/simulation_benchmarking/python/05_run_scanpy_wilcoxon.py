@@ -9,8 +9,17 @@ import pandas as pd
 import scanpy as sc
 from scipy.io import mmread
 
-IN_DIR = Path("/gpfs/Home/dpp5572/simulation_results/")
-OUT_DIR = Path("/gpfs/Home/dpp5572/simulation_results_scanpy/")
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parents[2]
+SIMULATION_WORK_DIR = Path(
+    os.environ.get("SIMULATION_WORK_DIR", REPO_ROOT / "results" / "simulation")
+)
+IN_DIR = Path(
+    os.environ.get("SIMULATION_RESULTS_DIR", SIMULATION_WORK_DIR / "generated")
+)
+OUT_DIR = Path(
+    os.environ.get("SIMULATION_SCANPY_DIR", SIMULATION_WORK_DIR / "scanpy")
+)
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 target_sim_raw = os.environ.get("TARGET_SIM")

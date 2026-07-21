@@ -1,4 +1,3 @@
 name: scvi_abc
 channels:
   - defaults
-prefix: /home/jaypi/anaconda3/envs/scvi_abc

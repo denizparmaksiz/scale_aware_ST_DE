@@ -9,8 +9,8 @@ contents, and whether the data originate from this study or an external source.
 
 ## 1. Upload to Zenodo
 
-The current analysis requires the following 32 files, totaling approximately
-9.397 GiB. Preserve the directory/group labels below in the Zenodo README or in
+The current analysis requires the following 35 files, totaling approximately
+9.48 GiB. Preserve the directory/group labels below in the Zenodo README or in
 a single archive so notebook configuration remains understandable.
 
 ### A. Primary and derived analysis-ready objects
@@ -53,10 +53,14 @@ Required sections:
 4. `old_posterior_section_example_1` — notebook 04; required subset 185.30 MB.
 5. `young_posterior_section_example_1` — notebook 04; required subset 200.91 MB.
 
-Also upload these two study-generated CCF annotation tables used by notebook 01:
+Also upload these five study-generated CCF annotation tables used for the
+representative spatial figures in notebooks 01 and 04:
 
+- `cell_metadata_wCCF_regions_old_anterior_section_example_1.csv` — 23,861,200 bytes.
+- `cell_metadata_wCCF_regions_old_posterior_section_example_1.csv` — 31,951,500 bytes.
 - `cell_metadata_wCCF_regions_young_anterior_section_example_1.csv` — 31,947,073 bytes.
 - `cell_metadata_wCCF_regions_young_anterior_section_example_2.csv` — 22,463,802 bytes.
+- `cell_metadata_wCCF_regions_young_posterior_section_example_1.csv` — 33,704,080 bytes.
 
 ### C. Simulation source inputs
 
@@ -229,10 +233,10 @@ standalone workbooks are not publication inputs.
 
 | Notebook | Zenodo inputs | GitHub inputs | External-download inputs | Additional File route |
 |---|---|---|---|---|
-| 01 | Three panel HDF5s; five section input triplets; two study-generated CCF metadata CSVs | Figure 1D loader/config code | Xenium, raw SenNet CosMx, three published aging workbooks | None |
+| 01 | Three panel HDF5s; five section input triplets; study-generated CCF metadata CSVs for its displayed sections | Figure 1D loader/config code | Xenium, raw SenNet CosMx, three published aging workbooks | None |
 | 02 | Simulation source inputs only for full recomputation | Plotting notebook and simulation scripts | None | Additional File 3 for all plotting tables |
 | 03 | `adata_glia_aldex_pp.h5ad` | MERFISH master list, ALDEx scripts/manifest | None | Additional File 4 for pooled results |
-| 04 | Two primary MERFISH objects and four section input triplets | Plotting code | Allen CCF ontology | Additional File 4 for primary results |
+| 04 | Two primary MERFISH objects; four section input triplets; study-generated CCF metadata CSVs for its displayed sections | Plotting code | Allen CCF ontology | Additional File 4 for primary results |
 | 05 | None beyond Additional File 4 | Frozen annotations and module dictionary | Optional live MyGene service only | Additional File 4 |
 | 06 | Primary MERFISH H5AD | Comparison code | Sun AnnData | Additional Files 4 and 5 |
 | 07 | None | Validation code | Sun AnnData and Table S7 | Additional File 5 |

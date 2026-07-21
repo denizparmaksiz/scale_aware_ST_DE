@@ -1,5 +1,7 @@
 # Authoritative publication upload manifest
 
+Zenodo record: [10.5281/zenodo.21420404](https://doi.org/10.5281/zenodo.21420404)
+
 Audit date: 2026-07-20
 
 This manifest gives explicit destinations for the repository in its current

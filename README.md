@@ -1,11 +1,11 @@
-# Scale-Aware Compositional Inference Improves Reproducibility and Uncovers Convergent Aging Programs in Spatial Transcriptomics
+# Scale-aware spatial transcriptomics analyses
 
 This repository contains the numbered analysis notebooks and supporting code for the manuscript. The notebooks remain the primary, readable analysis record; `src/scale_aware_st` and `kimlabspatial` contain only shared configuration, data-loading, and analysis helpers used by those notebooks.
 
 ## Start here
 
 1. Clone this repository and open it at the repository root.
-2. Download the Zenodo deposit described in `PUBLICATION_UPLOAD_MANIFEST.md`.
+2. Download the accompanying data from [Zenodo (DOI: 10.5281/zenodo.21420404)](https://doi.org/10.5281/zenodo.21420404).
 3. Place or link the downloaded files using the directory layout documented in the deposit README and `PUBLICATION_UPLOAD_MANIFEST.md`.
 4. Install the repository helpers with `pip install -e .` from the repository root.
 5. Use the environment export matching the analysis in `environment_exports/`.
@@ -55,7 +55,7 @@ External source datasets are not redistributed. Their download and placement ins
 
 ## Environments
 
-The three Python environments used for the manuscript are documented as both Conda YAML exports and `pip freeze` snapshots in `environment_exports/`. Their exported prefixes point to the Linux/WSL analysis context; those prefixes may differ when an environment is recreated elsewhere:
+The three Python environments used for the manuscript are documented as both Conda YAML exports and `pip freeze` snapshots in `environment_exports/`. Their exported prefixes point to the Linux/WSL analysis context (`/home/jaypi/anaconda3/envs/...`); those prefixes may differ when an environment is recreated elsewhere:
 
 - `squidpy` — general spatial analyses and most notebooks
 - `mapmycells` — MapMyCells label transfer
@@ -65,9 +65,9 @@ The HPC R and simulation environments are documented under `documentation_code/a
 
 ## Data publication
 
-`PUBLICATION_UPLOAD_MANIFEST.md` is the authoritative file-by-file decision record for GitHub, Zenodo, and externally downloaded data. `zenodo_uploads/README.md` documents the staged Zenodo directory structure; `zenodo_uploads/SHA256SUMS.txt` records checksums for every staged source file.
+`PUBLICATION_UPLOAD_MANIFEST.md` is the authoritative file-by-file decision record for GitHub, Zenodo, and externally downloaded data. The [Zenodo deposit](https://doi.org/10.5281/zenodo.21420404) includes its own `README.md`, which documents the archive layout, and `SHA256SUMS.txt`, which records checksums for the deposited source files.
 
-For Zenodo, upload the five logical groups (`figure1`, `primary_merfish`, `simulation`, `cosmx`, and `supplementary_files`) as separate ZIP archives, together with the Zenodo README and checksum file. Separate archives make selective download practical while preserving the directory structure expected by the notebooks.
+The deposit provides five logical groups (`figure1`, `primary_merfish`, `simulation`, `cosmx`, and `supplementary_files`) as separate ZIP archives, together with the Zenodo README and checksum file. Separate archives make selective downloading practical while preserving the directory structure expected by the notebooks.
 
 ## Validation
 

@@ -1,4 +1,4 @@
-# Scale-aware spatial transcriptomics analyses
+# Scale-Aware Compositional Inference Improves Reproducibility and Uncovers Convergent Aging Programs in Spatial Transcriptomics
 
 This repository contains the numbered analysis notebooks and supporting code for the manuscript. The notebooks remain the primary, readable analysis record; `src/scale_aware_st` and `kimlabspatial` contain only shared configuration, data-loading, and analysis helpers used by those notebooks.
 

@@ -3,14 +3,16 @@ library(readr)
 library(stringr)
 library(writexl)
 
+source(file.path(dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)[1]), mustWork = FALSE)), "path_config.R"))
+
 alpha <- 0.05
 beta <- 0.5
-aldex_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_aldex"
-mast_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_mast"
-nb_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_nb"
-scanpy_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_scanpy"
-manifest_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results"
-out_dir <- "D:/Labmembers/Deniz/aging_grant_paper/benchmarking"
+aldex_dir <- simulation_aldex_dir
+mast_dir <- simulation_mast_dir
+nb_dir <- simulation_nb_dir
+scanpy_dir <- simulation_scanpy_dir
+manifest_dir <- simulation_generated_dir
+out_dir <- simulation_benchmark_dir
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 f_beta <- function(ppv, power, beta = 0.5) {

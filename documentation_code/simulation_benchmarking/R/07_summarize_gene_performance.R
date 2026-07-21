@@ -3,12 +3,15 @@ library(readr)
 library(stringr)
 library(writexl)
 
-aldex_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_aldex"
-mast_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_mast"
-nb_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_nb"
-scanpy_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results_scanpy"
-manifest_dir <- "D:/Labmembers/Deniz/aging_grant_paper/DEG/simulation_results"
-out_file <- "D:/Labmembers/Deniz/aging_grant_paper/benchmarking/simulation_gene_performance.xlsx"
+source(file.path(dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)[1]), mustWork = FALSE)), "path_config.R"))
+
+aldex_dir <- simulation_aldex_dir
+mast_dir <- simulation_mast_dir
+nb_dir <- simulation_nb_dir
+scanpy_dir <- simulation_scanpy_dir
+manifest_dir <- simulation_generated_dir
+out_file <- file.path(simulation_benchmark_dir, "simulation_gene_performance.xlsx")
+dir.create(dirname(out_file), showWarnings = FALSE, recursive = TRUE)
 
 manifest_files <- list.files(manifest_dir, pattern = "^manifest_.*_sim_\\d{3}_N_\\d{3}\\.rds$", full.names = TRUE)
 dataset_table <- bind_rows(lapply(manifest_files, function(path) {

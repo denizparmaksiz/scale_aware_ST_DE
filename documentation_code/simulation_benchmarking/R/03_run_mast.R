@@ -5,8 +5,10 @@ library(lme4)
 library(stringr)
 library(writexl)
 
-in_dir <- "/gpfs/Home/dpp5572/simulation_results/"
-out_dir <- "/gpfs/Home/dpp5572/simulation_results_mast/"
+source(file.path(dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)[1]), mustWork = FALSE)), "path_config.R"))
+
+in_dir <- simulation_generated_dir
+out_dir <- simulation_mast_dir
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 target_sim <- suppressWarnings(as.integer(Sys.getenv("TARGET_SIM")))
 if (is.na(target_sim)) stop("TARGET_SIM not set")

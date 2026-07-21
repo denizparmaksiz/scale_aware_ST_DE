@@ -4,11 +4,13 @@ library(seqgendiff)
 library(readxl)
 library(data.table)
 
-curr_dir <- "/gpfs/Home/dpp5572/simulation/"
+source(file.path(dirname(normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)[1]), mustWork = FALSE)), "path_config.R"))
+
+curr_dir <- simulation_source_dir
 count_file <- file.path(curr_dir, "adata_nn_raw_counts_transposed.csv")
 metadata_file <- file.path(curr_dir, "adata_nn_raw_counts_transposed_MD.xlsx")
 design_file <- file.path(curr_dir, "updated_sim_design.rds")
-out_dir <- "/gpfs/Home/dpp5572/simulation_results/"
+out_dir <- simulation_generated_dir
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 detection_threshold <- 0.20

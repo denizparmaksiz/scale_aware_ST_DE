@@ -1,0 +1,374 @@
+# HPC ALDEx3 Standard Environment
+
+## Environment
+R version: 4.5.0
+Platform: x86_64-pc-linux-gnu
+Operating system: Red Hat Enterprise Linux 8.10 (Ootpa)
+Time zone: America/New_York
+BLAS: R reference BLAS supplied with the HPC R 4.5.0 module
+LAPACK: R LAPACK supplied with the HPC R 4.5.0 module (LAPACK 3.12.1)
+
+## ALDEx3 provenance
+Repository: GitHub (jsilve24/ALDEx3)
+Version: 0.4.0
+Git reference recorded at installation: HEAD
+Commit: 8c05ad40c41279dffa05dc808167ffcd53207740
+
+Reinstallation command:
+```r
+remotes::install_github("jsilve24/ALDEx3", ref = "8c05ad40c41279dffa05dc808167ffcd53207740")
+```
+
+## Key package versions
+ALDEx3        0.4.0
+lme4          1.1-37
+lmerTest      3.1-3
+nlme          3.1-168
+Matrix        1.7-4
+matrixStats   1.5.0
+abind         1.4-8
+MASS          7.3-65
+purrr         1.1.0
+data.table    1.18.0
+dplyr         1.1.4
+readxl        1.4.5
+writexl       1.5.4
+future        1.68.0
+future.apply  1.20.1
+
+## Complete installed package inventory
+
+Package	Version	Library source	Built
+abind	1.4-8	HPC R module library	4.5.0
+abind	1.4-8	User environment library	4.5.0
+ALDEx3	0.4.0	User environment library	4.5.0
+annotate	1.86.1	HPC R module library	4.5.0
+AnnotationDbi	1.70.0	HPC R module library	4.5.0
+askpass	1.2.1	HPC R module library	4.5.0
+backports	1.5.0	HPC R module library	4.5.0
+ballgown	2.40.0	HPC R module library	4.5.0
+base	4.5.0	HPC R module library	4.5.0
+base64enc	0.1-3	HPC R module library	4.5.0
+BH	1.90.0-1	HPC R module library	4.5.0
+Biobase	2.68.0	HPC R module library	4.5.0
+BiocGenerics	0.54.1	HPC R module library	4.5.0
+BiocIO	1.18.0	HPC R module library	4.5.0
+BiocManager	1.30.27	HPC R module library	4.5.0
+BiocParallel	1.42.2	HPC R module library	4.5.0
+BiocVersion	3.21.1	HPC R module library	4.5.0
+Biostrings	2.76.0	HPC R module library	4.5.0
+bit	4.6.0	HPC R module library	4.5.0
+bit64	4.6.0-1	HPC R module library	4.5.0
+bitops	1.0-9	HPC R module library	4.5.0
+blob	1.2.4	HPC R module library	4.5.0
+boot	1.3-32	HPC R module library	4.5.0
+brew	1.0-10	User environment library	4.5.0
+brio	1.1.5	User environment library	4.5.0
+bslib	0.9.0	HPC R module library	4.5.0
+cachem	1.1.0	HPC R module library	4.5.0
+Cairo	1.7-0	HPC R module library	4.5.0
+callr	3.7.6	User environment library	4.5.0
+caTools	1.18.3	HPC R module library	4.5.0
+cellranger	1.1.0	User environment library	4.5.0
+checkmate	2.3.4	HPC R module library	4.5.0
+class	7.3-23	HPC R module library	4.5.0
+cli	3.6.5	HPC R module library	4.5.0
+clipr	0.8.0	User environment library	4.5.0
+cluster	2.1.8.1	HPC R module library	4.5.0
+codetools	0.2-20	HPC R module library	4.5.0
+commonmark	2.0.0	HPC R module library	4.5.0
+compiler	4.5.0	HPC R module library	4.5.0
+cowplot	1.2.0	HPC R module library	4.5.0
+cpp11	0.5.2	HPC R module library	4.5.0
+crayon	1.5.3	HPC R module library	4.5.0
+credentials	2.0.3	User environment library	4.5.0
+crosstalk	1.2.2	HPC R module library	4.5.0
+curl	7.0.0	User environment library	4.5.0
+curl	7.0.0	HPC R module library	4.5.0
+data.table	1.18.0	HPC R module library	4.5.0
+datasets	4.5.0	HPC R module library	4.5.0
+DBI	1.2.3	HPC R module library	4.5.0
+DelayedArray	0.34.1	HPC R module library	4.5.0
+deldir	2.0-4	HPC R module library	4.5.0
+desc	1.4.3	User environment library	4.5.0
+DESeq2	1.48.2	HPC R module library	4.5.0
+devtools	2.4.6	User environment library	4.5.0
+diffobj	0.3.6	User environment library	4.5.0
+digest	0.6.39	HPC R module library	4.5.0
+doParallel	1.0.17	User environment library	4.5.0
+dotCall64	1.2	HPC R module library	4.5.0
+downlit	0.4.4	User environment library	4.5.0
+dplyr	1.1.4	HPC R module library	4.5.0
+dplyr	1.1.4	User environment library	4.5.0
+dqrng	0.4.1	HPC R module library	4.5.0
+edgeR	4.6.3	HPC R module library	4.5.0
+ellipsis	0.3.2	User environment library	4.5.0
+ellipsis	0.3.2	HPC R module library	4.5.0
+evaluate	1.0.5	HPC R module library	4.5.0
+fansi	1.0.7	HPC R module library	4.5.0
+farver	2.1.2	HPC R module library	4.5.0
+fastDummies	1.7.5	HPC R module library	4.5.0
+fastmap	1.2.0	HPC R module library	4.5.0
+fitdistrplus	1.2-4	HPC R module library	4.5.0
+FNN	1.1.4.1	HPC R module library	4.5.0
+fontawesome	0.5.3	HPC R module library	4.5.0
+foreach	1.5.2	User environment library	4.5.0
+foreign	0.8-90	HPC R module library	4.5.0
+formatR	1.14	HPC R module library	4.5.0
+fs	1.6.6	HPC R module library	4.5.0
+futile.logger	1.4.9	HPC R module library	4.5.0
+futile.options	1.0.1	HPC R module library	4.5.0
+future	1.68.0	HPC R module library	4.5.0
+future.apply	1.20.1	HPC R module library	4.5.0
+genefilter	1.90.0	HPC R module library	4.5.0
+generics	0.1.4	HPC R module library	4.5.0
+GenomeInfoDb	1.44.3	HPC R module library	4.5.0
+GenomeInfoDbData	1.2.14	HPC R module library	4.5.0
+GenomicAlignments	1.44.0	HPC R module library	4.5.0
+GenomicFeatures	1.60.0	HPC R module library	4.5.0
+GenomicRanges	1.60.0	HPC R module library	4.5.0
+gert	2.1.5	User environment library	4.5.0
+ggplot2	4.0.0	User environment library	4.5.0
+ggplot2	4.0.1	HPC R module library	4.5.0
+ggrepel	0.9.6	HPC R module library	4.5.0
+ggridges	0.5.7	HPC R module library	4.5.0
+gh	1.5.0	User environment library	4.5.0
+gitcreds	0.1.2	User environment library	4.5.0
+globals	0.18.0	HPC R module library	4.5.0
+glue	1.8.0	HPC R module library	4.5.0
+goftest	1.2-3	HPC R module library	4.5.0
+gplots	3.3.0	HPC R module library	4.5.0
+graphics	4.5.0	HPC R module library	4.5.0
+grDevices	4.5.0	HPC R module library	4.5.0
+grid	4.5.0	HPC R module library	4.5.0
+gridExtra	2.3	HPC R module library	4.5.0
+gtable	0.3.6	HPC R module library	4.5.0
+gtools	3.9.5	HPC R module library	4.5.0
+here	1.0.2	HPC R module library	4.5.0
+highr	0.11	HPC R module library	4.5.0
+hms	1.1.4	User environment library	4.5.0
+htmltools	0.5.9	HPC R module library	4.5.0
+htmlwidgets	1.6.4	HPC R module library	4.5.0
+httpuv	1.6.16	HPC R module library	4.5.0
+httr	1.4.7	HPC R module library	4.5.0
+httr2	1.2.1	User environment library	4.5.0
+ica	1.0-3	HPC R module library	4.5.0
+igraph	2.2.1	HPC R module library	4.5.0
+ini	0.3.1	User environment library	4.5.0
+IRanges	2.42.0	HPC R module library	4.5.0
+irlba	2.3.5.1	HPC R module library	4.5.0
+isoband	0.3.0	HPC R module library	4.5.0
+iterators	1.0.14	User environment library	4.5.0
+jquerylib	0.1.4	HPC R module library	4.5.0
+jsonlite	2.0.0	HPC R module library	4.5.0
+KEGGREST	1.48.1	HPC R module library	4.5.0
+KernSmooth	2.23-26	HPC R module library	4.5.0
+knitr	1.51	HPC R module library	4.5.0
+labeling	0.4.3	HPC R module library	4.5.0
+lambda.r	1.2.4	HPC R module library	4.5.0
+later	1.4.4	HPC R module library	4.5.0
+lattice	0.22-7	HPC R module library	4.5.0
+lazyeval	0.2.2	HPC R module library	4.5.0
+learnr	0.11.6	HPC R module library	4.5.0
+leidenbase	0.1.36	HPC R module library	4.5.0
+lifecycle	1.0.4	HPC R module library	4.5.0
+limma	3.64.3	HPC R module library	4.5.0
+listenv	0.10.0	HPC R module library	4.5.0
+litedown	0.9	HPC R module library	4.5.0
+lme4	1.1-37	User environment library	4.5.0
+lmerTest	3.1-3	User environment library	4.5.0
+lmtest	0.9-40	HPC R module library	4.5.0
+lmtest	0.9-40	User environment library	4.5.0
+locfit	1.5-9.12	HPC R module library	4.5.0
+magrittr	2.0.4	HPC R module library	4.5.0
+magrittr	2.0.4	User environment library	4.5.0
+markdown	2.0	HPC R module library	4.5.0
+MASS	7.3-65	HPC R module library	4.5.0
+Matrix	1.7-4	HPC R module library	4.5.0
+MatrixGenerics	1.20.0	HPC R module library	4.5.0
+matrixStats	1.5.0	User environment library	4.5.0
+matrixStats	1.5.0	HPC R module library	4.5.0
+memoise	2.0.1	HPC R module library	4.5.0
+methods	4.5.0	HPC R module library	4.5.0
+mgcv	1.9-4	HPC R module library	4.5.0
+mime	0.13	HPC R module library	4.5.0
+miniUI	0.1.2	HPC R module library	4.5.0
+minqa	1.2.8	User environment library	4.5.0
+nlme	3.1-168	User environment library	4.5.0
+nlme	3.1-168	HPC R module library	4.5.0
+nloptr	2.2.1	User environment library	4.5.0
+nnet	7.3-20	HPC R module library	4.5.0
+numDeriv	2016.8-1.1	User environment library	4.5.0
+openssl	2.3.4	HPC R module library	4.5.0
+otel	0.2.0	HPC R module library	4.5.0
+parallel	4.5.0	HPC R module library	4.5.0
+parallelly	1.46.0	HPC R module library	4.5.0
+patchwork	1.3.2	HPC R module library	4.5.0
+pbapply	1.7-4	HPC R module library	4.5.0
+pillar	1.11.1	HPC R module library	4.5.0
+pkgbuild	1.4.8	User environment library	4.5.0
+pkgconfig	2.0.3	HPC R module library	4.5.0
+pkgdown	2.1.3	User environment library	4.5.0
+pkgload	1.4.1	User environment library	4.5.0
+plogr	0.2.0	HPC R module library	4.5.0
+plotly	4.11.0	HPC R module library	4.5.0
+plyr	1.8.9	HPC R module library	4.5.0
+png	0.1-8	HPC R module library	4.5.0
+polyclip	1.10-7	HPC R module library	4.5.0
+praise	1.0.0	User environment library	4.5.0
+prettyunits	1.2.0	User environment library	4.5.0
+processx	3.8.6	User environment library	4.5.0
+profvis	0.4.0	User environment library	4.5.0
+progress	1.2.3	User environment library	4.5.0
+progressr	0.18.0	HPC R module library	4.5.0
+promises	1.5.0	HPC R module library	4.5.0
+ps	1.9.1	User environment library	4.5.0
+purrr	1.1.0	User environment library	4.5.0
+purrr	1.2.0	HPC R module library	4.5.0
+R6	2.6.1	HPC R module library	4.5.0
+ragg	1.5.0	HPC R module library	4.5.0
+ragg	1.5.0	User environment library	4.5.0
+RANN	2.6.2	HPC R module library	4.5.0
+rappdirs	0.3.3	HPC R module library	4.5.0
+rBeta2009	1.0.1	User environment library	4.5.0
+rbibutils	2.3	User environment library	4.5.0
+rcmdcheck	1.4.0	User environment library	4.5.0
+RColorBrewer	1.1-3	HPC R module library	4.5.0
+Rcpp	1.1.0	HPC R module library	4.5.0
+Rcpp	1.1.0	User environment library	4.5.0
+RcppAnnoy	0.0.22	HPC R module library	4.5.0
+RcppArmadillo	15.2.3-1	HPC R module library	4.5.0
+RcppEigen	0.3.4.0.2	HPC R module library	4.5.0
+RcppHNSW	0.6.0	HPC R module library	4.5.0
+RcppProgress	0.4.2	HPC R module library	4.5.0
+RcppTOML	0.2.3	HPC R module library	4.5.0
+RCurl	1.98-1.17	HPC R module library	4.5.0
+Rdpack	2.6.4	User environment library	4.5.0
+readxl	1.4.5	User environment library	4.5.0
+reformulas	0.4.2	User environment library	4.5.0
+rematch	2.0.0	User environment library	4.5.0
+remotes	2.5.0	User environment library	4.5.0
+renv	1.1.7	HPC R module library	4.5.0
+reshape2	1.4.5	HPC R module library	4.5.0
+restfulr	0.0.16	HPC R module library	4.5.0
+reticulate	1.44.1	HPC R module library	4.5.0
+Rhtslib	3.4.0	HPC R module library	4.5.0
+rjson	0.2.23	HPC R module library	4.5.0
+rlang	1.1.6	HPC R module library	4.5.0
+rmarkdown	2.30	HPC R module library	4.5.0
+ROCR	1.0-11	HPC R module library	4.5.0
+roxygen2	7.3.3	User environment library	4.5.0
+rpart	4.1.24	HPC R module library	4.5.0
+rprojroot	2.1.1	HPC R module library	4.5.0
+rprojroot	2.1.1	User environment library	4.5.0
+Rsamtools	2.24.1	HPC R module library	4.5.0
+RSpectra	0.16-2	HPC R module library	4.5.0
+RSQLite	2.4.5	HPC R module library	4.5.0
+rstudioapi	0.17.1	User environment library	4.5.0
+rstudioapi	0.18.0	HPC R module library	4.5.0
+Rsubread	2.22.1	HPC R module library	4.5.0
+rtracklayer	1.68.0	HPC R module library	4.5.0
+Rtsne	0.17	HPC R module library	4.5.0
+RUnit	0.4.33.1	HPC R module library	4.5.0
+rversions	3.0.0	User environment library	4.5.0
+S4Arrays	1.8.1	HPC R module library	4.5.0
+S4Vectors	0.46.0	HPC R module library	4.5.0
+S7	0.2.0	User environment library	4.5.0
+S7	0.2.1	HPC R module library	4.5.0
+sandwich	3.1-1	User environment library	4.5.0
+sass	0.4.10	HPC R module library	4.5.0
+scales	1.4.0	HPC R module library	4.5.0
+scattermore	1.2	HPC R module library	4.5.0
+sctransform	0.4.2	HPC R module library	4.5.0
+sessioninfo	1.2.3	User environment library	4.5.0
+Seurat	5.4.0	HPC R module library	4.5.0
+SeuratObject	5.3.0	HPC R module library	4.5.0
+SGSeq	1.42.1	HPC R module library	4.5.0
+shiny	1.12.1	HPC R module library	4.5.0
+sitmo	2.0.2	HPC R module library	4.5.0
+snow	0.4-4	HPC R module library	4.5.0
+sourcetools	0.1.7-1	HPC R module library	4.5.0
+sp	2.2-0	HPC R module library	4.5.0
+spam	2.11-1	HPC R module library	4.5.0
+SparseArray	1.8.1	HPC R module library	4.5.0
+spatial	7.3-18	HPC R module library	4.5.0
+spatstat.data	3.1-9	HPC R module library	4.5.0
+spatstat.explore	3.6-0	HPC R module library	4.5.0
+spatstat.geom	3.6-1	HPC R module library	4.5.0
+spatstat.random	3.4-3	HPC R module library	4.5.0
+spatstat.sparse	3.1-0	HPC R module library	4.5.0
+spatstat.univar	3.1-5	HPC R module library	4.5.0
+spatstat.utils	3.2-0	HPC R module library	4.5.0
+splines	4.5.0	HPC R module library	4.5.0
+statmod	1.5.1	HPC R module library	4.5.0
+stats	4.5.0	HPC R module library	4.5.0
+stats4	4.5.0	HPC R module library	4.5.0
+stringi	1.8.7	HPC R module library	4.5.0
+stringr	1.6.0	HPC R module library	4.5.0
+stringr	1.5.2	User environment library	4.5.0
+SummarizedExperiment	1.38.1	HPC R module library	4.5.0
+survival	3.8-3	HPC R module library	4.5.0
+sva	3.56.0	HPC R module library	4.5.0
+sys	3.4.3	HPC R module library	4.5.0
+systemfonts	1.3.1	User environment library	4.5.0
+systemfonts	1.3.1	HPC R module library	4.5.0
+tcltk	4.5.0	HPC R module library	4.5.0
+tensor	1.5.1	HPC R module library	4.5.0
+testthat	3.2.3	User environment library	4.5.0
+textshaping	1.0.4	HPC R module library	4.5.0
+textshaping	1.0.4	User environment library	4.5.0
+tibble	3.3.0	HPC R module library	4.5.0
+tidyr	1.3.2	HPC R module library	4.5.0
+tidyselect	1.2.1	HPC R module library	4.5.0
+tinytex	0.58	HPC R module library	4.5.0
+tools	4.5.0	HPC R module library	4.5.0
+UCSC.utils	1.4.0	HPC R module library	4.5.0
+urlchecker	1.0.1	User environment library	4.5.0
+usethis	3.2.1	User environment library	4.5.0
+utf8	1.2.6	HPC R module library	4.5.0
+utils	4.5.0	HPC R module library	4.5.0
+uwot	0.2.4	HPC R module library	4.5.0
+vctrs	0.6.5	HPC R module library	4.5.0
+viridisLite	0.4.2	HPC R module library	4.5.0
+waldo	0.6.2	User environment library	4.5.0
+whisker	0.4.1	User environment library	4.5.0
+withr	3.0.2	HPC R module library	4.5.0
+writexl	1.5.4	User environment library	4.5.0
+xfun	0.55	HPC R module library	4.5.0
+XML	3.99-0.20	HPC R module library	4.5.0
+xml2	1.4.1	User environment library	4.5.0
+xopen	1.0.1	User environment library	4.5.0
+xtable	1.8-4	HPC R module library	4.5.0
+XVector	0.48.0	HPC R module library	4.5.0
+yaml	2.3.12	HPC R module library	4.5.0
+zip	2.3.3	User environment library	4.5.0
+zoo	1.8-15	HPC R module library	4.5.0
+
+## Recorded session information
+
+R version 4.5.0 (2025-04-11)
+Platform: x86_64-pc-linux-gnu
+Running under: Red Hat Enterprise Linux 8.10 (Ootpa)
+
+Matrix products: default
+BLAS:   /gpfs/ri/shared/modules8/R/4.5.0/lib64/R/lib/libRblas.so
+LAPACK: /gpfs/ri/shared/modules8/R/4.5.0/lib64/R/lib/libRlapack.so;  LAPACK version 3.12.1
+
+locale:
+[1] C
+
+time zone: America/New_York
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+loaded via a namespace (and not attached):
+[1] compiler_4.5.0
+
+## Notes
+
+This environment was used for the standard ALDEx3 analyses in this study.
+The exact Git commit is pinned because `HEAD` is not a stable release or branch identifier.
+
+The complete package inventory is included for archival reproducibility. It may contain packages that were installed in the library but were not used directly by every analysis script. The analysis scripts and their documented inputs, model formulas, Monte Carlo settings, random seeds, and HPC submission parameters remain part of the complete reproducibility record.

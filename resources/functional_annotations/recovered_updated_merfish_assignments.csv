@@ -1,0 +1,127 @@
+Module,category
+ECM_Adhesion_Cytoskeleton_Remodeling,Glycosaminoglycan biosynthesis - heparan sulfate / heparin - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,glycoprotein biosynthetic process
+ECM_Adhesion_Cytoskeleton_Remodeling,heparan sulfate proteoglycan biosynthetic process
+ECM_Adhesion_Cytoskeleton_Remodeling,positive regulation of cell migration
+ECM_Adhesion_Cytoskeleton_Remodeling,cell migration
+ECM_Adhesion_Cytoskeleton_Remodeling,Proteoglycans in cancer - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,cell differentiation
+ECM_Adhesion_Cytoskeleton_Remodeling,cell adhesion
+ECM_Adhesion_Cytoskeleton_Remodeling,in utero embryonic development
+ECM_Adhesion_Cytoskeleton_Remodeling,Regulation of actin cytoskeleton - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,angiogenesis
+ECM_Adhesion_Cytoskeleton_Remodeling,Focal adhesion - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,blood vessel development
+ECM_Adhesion_Cytoskeleton_Remodeling,ECM-receptor interaction - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,heart development
+ECM_Adhesion_Cytoskeleton_Remodeling,Fluid shear stress and atherosclerosis - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,cell-cell adhesion
+ECM_Adhesion_Cytoskeleton_Remodeling,Chemokine signaling pathway - Mus musculus (mouse)
+ECM_Adhesion_Cytoskeleton_Remodeling,Gap junction - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,negative regulation of apoptotic process
+Growth_Survival_Stress_Signaling,positive regulation of cell population proliferation
+Growth_Survival_Stress_Signaling,positive regulation of transcription by RNA polymerase II
+Growth_Survival_Stress_Signaling,G protein-coupled receptor signaling pathway
+Growth_Survival_Stress_Signaling,PI3K-Akt signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,negative regulation of DNA-templated transcription
+Growth_Survival_Stress_Signaling,positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction
+Growth_Survival_Stress_Signaling,signal transduction
+Growth_Survival_Stress_Signaling,positive regulation of MAPK cascade
+Growth_Survival_Stress_Signaling,positive regulation of gene expression
+Growth_Survival_Stress_Signaling,Ras signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,MAPK signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,Rap1 signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,negative regulation of gene expression
+Growth_Survival_Stress_Signaling,positive regulation of ERK1 and ERK2 cascade
+Growth_Survival_Stress_Signaling,cAMP signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,cellular response to hypoxia
+Growth_Survival_Stress_Signaling,response to xenobiotic stimulus
+Growth_Survival_Stress_Signaling,negative regulation of cell population proliferation
+Growth_Survival_Stress_Signaling,HIF-1 signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,JAK-STAT signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,Cellular senescence - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,response to ethanol
+Growth_Survival_Stress_Signaling,negative regulation of transcription by RNA polymerase II
+Growth_Survival_Stress_Signaling,regulation of transcription by RNA polymerase II
+Growth_Survival_Stress_Signaling,positive regulation of apoptotic process
+Growth_Survival_Stress_Signaling,gene expression
+Growth_Survival_Stress_Signaling,positive regulation of DNA-templated transcription
+Growth_Survival_Stress_Signaling,response to oxidative stress
+Growth_Survival_Stress_Signaling,regulation of gene expression
+Growth_Survival_Stress_Signaling,intracellular signal transduction
+Growth_Survival_Stress_Signaling,negative regulation of neuron apoptotic process
+Growth_Survival_Stress_Signaling,Apelin signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,Relaxin signaling pathway - Mus musculus (mouse)
+Growth_Survival_Stress_Signaling,response to hypoxia
+Transport_Trafficking_Membrane_Homeostasis,Neuroactive ligand-receptor interaction - Mus musculus (mouse)
+Transport_Trafficking_Membrane_Homeostasis,Endocytosis - Mus musculus (mouse)
+Transport_Trafficking_Membrane_Homeostasis,Calcium signaling pathway - Mus musculus (mouse)
+Transport_Trafficking_Membrane_Homeostasis,lipid metabolic process
+Transport_Trafficking_Membrane_Homeostasis,transmembrane transport
+Transport_Trafficking_Membrane_Homeostasis,monoatomic ion transmembrane transport
+Transport_Trafficking_Membrane_Homeostasis,monoatomic ion transport
+Transport_Trafficking_Membrane_Homeostasis,Glycosphingolipid biosynthesis - ganglio series - Mus musculus (mouse)
+Transport_Trafficking_Membrane_Homeostasis,vesicle-mediated transport
+Transport_Trafficking_Membrane_Homeostasis,Bile secretion - Mus musculus (mouse)
+Transport_Trafficking_Membrane_Homeostasis,sodium ion transmembrane transport
+Transport_Trafficking_Membrane_Homeostasis,calcium-mediated signaling
+Transport_Trafficking_Membrane_Homeostasis,regulation of postsynaptic membrane potential
+Energy_Metabolism_Mitochondria,Diabetic cardiomyopathy - Mus musculus (mouse)
+Energy_Metabolism_Mitochondria,Thermogenesis - Mus musculus (mouse)
+Energy_Metabolism_Mitochondria,Oxidative phosphorylation - Mus musculus (mouse)
+Energy_Metabolism_Mitochondria,Non-alcoholic fatty liver disease - Mus musculus (mouse)
+Energy_Metabolism_Mitochondria,tricarboxylic acid cycle
+Energy_Metabolism_Mitochondria,positive regulation of cold-induced thermogenesis
+Energy_Metabolism_Mitochondria,Citrate cycle (TCA cycle) - Mus musculus (mouse)
+Energy_Metabolism_Mitochondria,cellular response to amino acid stimulus
+Proteostasis_DNA_Repair_Quality_Control,DNA repair
+Proteostasis_DNA_Repair_Quality_Control,DNA damage response
+Proteostasis_DNA_Repair_Quality_Control,Nucleotide excision repair - Mus musculus (mouse)
+Proteostasis_DNA_Repair_Quality_Control,Chemical carcinogenesis - reactive oxygen species - Mus musculus (mouse)
+Proteostasis_DNA_Repair_Quality_Control,nucleotide-excision repair
+Proteostasis_DNA_Repair_Quality_Control,proteasome-mediated ubiquitin-dependent protein catabolic process
+Proteostasis_DNA_Repair_Quality_Control,protein ubiquitination
+Proteostasis_DNA_Repair_Quality_Control,ubiquitin-dependent protein catabolic process
+Proteostasis_DNA_Repair_Quality_Control,proteolysis
+Proteostasis_DNA_Repair_Quality_Control,protein phosphorylation
+Immune_Inflammation_Stress_Response,Human immunodeficiency virus 1 infection - Mus musculus (mouse)
+Immune_Inflammation_Stress_Response,Human cytomegalovirus infection - Mus musculus (mouse)
+Immune_Inflammation_Stress_Response,Human papillomavirus infection - Mus musculus (mouse)
+Immune_Inflammation_Stress_Response,Kaposi sarcoma-associated herpesvirus infection - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,Glutamatergic synapse - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,GABAergic synapse - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,nervous system development
+Neuronal_Synaptic_Plasticity_Programs,brain development
+Neuronal_Synaptic_Plasticity_Programs,modulation of chemical synaptic transmission
+Neuronal_Synaptic_Plasticity_Programs,"synaptic transmission, glutamatergic"
+Neuronal_Synaptic_Plasticity_Programs,long-term memory
+Neuronal_Synaptic_Plasticity_Programs,chemical synaptic transmission
+Neuronal_Synaptic_Plasticity_Programs,neuron projection development
+Neuronal_Synaptic_Plasticity_Programs,Circadian entrainment - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,axonogenesis
+Neuronal_Synaptic_Plasticity_Programs,Dopaminergic synapse - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,positive regulation of neurogenesis
+Neuronal_Synaptic_Plasticity_Programs,Retrograde endocannabinoid signaling - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,neuron development
+Neuronal_Synaptic_Plasticity_Programs,axon guidance
+Neuronal_Synaptic_Plasticity_Programs,Axon guidance - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,Serotonergic synapse - Mus musculus (mouse)
+Neuronal_Synaptic_Plasticity_Programs,Cholinergic synapse - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Huntington disease - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Pathways of neurodegeneration - multiple diseases - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Alzheimer disease - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Amyotrophic lateral sclerosis - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Prion disease - Mus musculus (mouse)
+Neurodegeneration_Disease_Wrapper,Parkinson disease - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Pathways in cancer - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,MicroRNAs in cancer - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Glioma - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Melanoma - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Prostate cancer - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Transcriptional misregulation in cancer - Mus musculus (mouse)
+Cancer_Wrapper_Pathways,Hepatocellular carcinoma - Mus musculus (mouse)
+Addiction_Substance_Response_Wrapper,Alcoholism - Mus musculus (mouse)
+Addiction_Substance_Response_Wrapper,Morphine addiction - Mus musculus (mouse)
+Addiction_Substance_Response_Wrapper,Nicotine addiction - Mus musculus (mouse)
+Development_Reproduction_Artifact,spermatogenesis

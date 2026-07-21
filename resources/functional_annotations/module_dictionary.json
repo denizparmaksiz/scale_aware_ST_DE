@@ -1,0 +1,160 @@
+{
+  "version": "2026-02",
+  "description": "Manual mapping of GO Biological Process and KEGG pathway annotations into broader functional modules used for the primary MERFISH aging analysis.",
+  "modules": {
+    "ECM_Adhesion_Cytoskeleton_Remodeling": [
+      "ECM-receptor interaction - Mus musculus (mouse)",
+      "Focal adhesion - Mus musculus (mouse)",
+      "cell adhesion",
+      "cell migration",
+      "positive regulation of cell migration",
+      "positive regulation of chemotaxis",
+      "Regulation of actin cytoskeleton - Mus musculus (mouse)",
+      "Proteoglycans in cancer - Mus musculus (mouse)",
+      "Glycosaminoglycan biosynthesis - heparan sulfate / heparin - Mus musculus (mouse)",
+      "Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate - Mus musculus (mouse)",
+      "heparan sulfate proteoglycan biosynthetic process",
+      "glycoprotein biosynthetic process",
+      "angiogenesis",
+      "blood vessel development",
+      "skeletal system morphogenesis",
+      "osteoblast differentiation",
+      "in utero embryonic development",
+      "cell differentiation"
+    ],
+
+    "Growth_Survival_Stress_Signaling": [
+      "PI3K-Akt signaling pathway - Mus musculus (mouse)",
+      "positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction",
+      "MAPK signaling pathway - Mus musculus (mouse)",
+      "regulation of MAPK cascade",
+      "positive regulation of MAPK cascade",
+      "positive regulation of ERK1 and ERK2 cascade",
+      "Ras signaling pathway - Mus musculus (mouse)",
+      "Rap1 signaling pathway - Mus musculus (mouse)",
+      "FoxO signaling pathway - Mus musculus (mouse)",
+      "JAK-STAT signaling pathway - Mus musculus (mouse)",
+      "Wnt signaling pathway",
+      "HIF-1 signaling pathway - Mus musculus (mouse)",
+      "AMPK signaling pathway - Mus musculus (mouse)",
+      "cAMP signaling pathway - Mus musculus (mouse)",
+      "G protein-coupled receptor signaling pathway",
+      "cell surface receptor protein tyrosine kinase signaling pathway",
+      "peptidyl-tyrosine phosphorylation",
+      "protein autophosphorylation",
+      "positive regulation of gene expression",
+      "positive regulation of transcription by RNA polymerase II",
+      "negative regulation of gene expression",
+      "negative regulation of DNA-templated transcription",
+      "negative regulation of apoptotic process",
+      "positive regulation of cell population proliferation",
+      "negative regulation of cell population proliferation",
+      "Cellular senescence - Mus musculus (mouse)",
+      "response to insulin",
+      "cellular response to hypoxia",
+      "response to ethanol",
+      "response to morphine",
+      "response to xenobiotic stimulus",
+      "signal transduction"
+    ],
+
+    "Transport_Trafficking_Membrane_Homeostasis": [
+      "vesicle-mediated transport",
+      "Endocytosis - Mus musculus (mouse)",
+      "transmembrane transport",
+      "monoatomic ion transport",
+      "monoatomic ion transmembrane transport",
+      "sodium ion transmembrane transport",
+      "lipid transport",
+      "lipid metabolic process",
+      "Glycosphingolipid biosynthesis - ganglio series - Mus musculus (mouse)",
+      "Bile secretion - Mus musculus (mouse)",
+      "Neuroactive ligand-receptor interaction - Mus musculus (mouse)",
+      "Phospholipase D signaling pathway - Mus musculus (mouse)",
+      "Calcium signaling pathway - Mus musculus (mouse)",
+      "calcium-mediated signaling"
+    ],
+
+    "Energy_Metabolism_Mitochondria": [
+      "Oxidative phosphorylation - Mus musculus (mouse)",
+      "Citrate cycle (TCA cycle) - Mus musculus (mouse)",
+      "tricarboxylic acid cycle",
+      "Thermogenesis - Mus musculus (mouse)",
+      "positive regulation of cold-induced thermogenesis",
+      "cellular response to amino acid stimulus",
+      "Non-alcoholic fatty liver disease - Mus musculus (mouse)",
+      "Diabetic cardiomyopathy - Mus musculus (mouse)"
+    ],
+
+    "Proteostasis_DNA_Repair_Quality_Control": [
+      "ubiquitin-dependent protein catabolic process",
+      "proteasome-mediated ubiquitin-dependent protein catabolic process",
+      "Ubiquitin mediated proteolysis - Mus musculus (mouse)",
+      "protein ubiquitination",
+      "proteolysis",
+      "peptide catabolic process",
+      "DNA repair",
+      "nucleotide-excision repair",
+      "Nucleotide excision repair - Mus musculus (mouse)",
+      "DNA damage response",
+      "Chemical carcinogenesis - reactive oxygen species - Mus musculus (mouse)"
+    ],
+
+    "Immune_Inflammation_Stress_Response": [
+      "inflammatory response",
+      "Human cytomegalovirus infection - Mus musculus (mouse)",
+      "Human papillomavirus infection - Mus musculus (mouse)",
+      "Human immunodeficiency virus 1 infection - Mus musculus (mouse)"
+    ],
+
+    "Neuronal_Synaptic_Plasticity_Programs": [
+      "chemical synaptic transmission",
+      "modulation of chemical synaptic transmission",
+      "postsynaptic modulation of chemical synaptic transmission",
+      "synaptic transmission, glutamatergic",
+      "Glutamatergic synapse - Mus musculus (mouse)",
+      "GABAergic synapse - Mus musculus (mouse)",
+      "Dopaminergic synapse - Mus musculus (mouse)",
+      "Long-term potentiation - Mus musculus (mouse)",
+      "regulation of synaptic plasticity",
+      "visual learning",
+      "long-term memory",
+      "memory",
+      "brain development",
+      "nervous system development",
+      "neuron projection development",
+      "axonogenesis",
+      "positive regulation of neurogenesis",
+      "Circadian entrainment - Mus musculus (mouse)"
+    ],
+
+    "Neurodegeneration_Disease_Wrapper": [
+      "Alzheimer disease - Mus musculus (mouse)",
+      "Parkinson disease - Mus musculus (mouse)",
+      "Huntington disease - Mus musculus (mouse)",
+      "Amyotrophic lateral sclerosis - Mus musculus (mouse)",
+      "Pathways of neurodegeneration - multiple diseases - Mus musculus (mouse)",
+      "Prion disease - Mus musculus (mouse)"
+    ],
+
+    "Cancer_Wrapper_Pathways": [
+      "Pathways in cancer - Mus musculus (mouse)",
+      "Transcriptional misregulation in cancer - Mus musculus (mouse)",
+      "MicroRNAs in cancer - Mus musculus (mouse)",
+      "Breast cancer - Mus musculus (mouse)",
+      "Prostate cancer - Mus musculus (mouse)",
+      "Melanoma - Mus musculus (mouse)",
+      "Glioma - Mus musculus (mouse)",
+      "Hepatocellular carcinoma - Mus musculus (mouse)"
+    ],
+
+    "Addiction_Substance_Response_Wrapper": [
+      "Alcoholism - Mus musculus (mouse)",
+      "Cocaine addiction - Mus musculus (mouse)"
+    ],
+
+    "Development_Reproduction_Artifact": [
+      "spermatogenesis"
+    ]
+  }
+}

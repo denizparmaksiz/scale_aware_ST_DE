@@ -1,0 +1,106 @@
+{
+  "version": "2026-02",
+  "description": "Shared CosMx–MERFISH modules and annotation terms.",
+  "modules": {
+    "Neuronal_Synaptic_Plasticity_Programs": [
+      "Axon guidance - Mus musculus (mouse)",
+      "Cholinergic synapse - Mus musculus (mouse)",
+      "Circadian entrainment - Mus musculus (mouse)",
+      "Dopaminergic synapse - Mus musculus (mouse)",
+      "GABAergic synapse - Mus musculus (mouse)",
+      "Glutamatergic synapse - Mus musculus (mouse)",
+      "Retrograde endocannabinoid signaling - Mus musculus (mouse)",
+      "Serotonergic synapse - Mus musculus (mouse)",
+      "axon guidance",
+      "chemical synaptic transmission",
+      "modulation of chemical synaptic transmission",
+      "nervous system development",
+      "neuron development",
+      "neuron projection development"
+    ],
+    "Neurodegeneration_Disease_Wrapper": [
+      "Alzheimer disease - Mus musculus (mouse)",
+      "Amyotrophic lateral sclerosis - Mus musculus (mouse)",
+      "Pathways of neurodegeneration - multiple diseases - Mus musculus (mouse)",
+      "Prion disease - Mus musculus (mouse)"
+    ],
+    "ECM_Adhesion_Cytoskeleton_Remodeling": [
+      "Chemokine signaling pathway - Mus musculus (mouse)",
+      "Fluid shear stress and atherosclerosis - Mus musculus (mouse)",
+      "Focal adhesion - Mus musculus (mouse)",
+      "Gap junction - Mus musculus (mouse)",
+      "Proteoglycans in cancer - Mus musculus (mouse)",
+      "Regulation of actin cytoskeleton - Mus musculus (mouse)",
+      "blood vessel development",
+      "cell differentiation",
+      "cell-cell adhesion",
+      "heart development",
+      "in utero embryonic development",
+      "positive regulation of cell migration"
+    ],
+    "Immune_Inflammation_Stress_Response": [
+      "Human cytomegalovirus infection - Mus musculus (mouse)",
+      "Human papillomavirus infection - Mus musculus (mouse)",
+      "Kaposi sarcoma-associated herpesvirus infection - Mus musculus (mouse)"
+    ],
+    "Proteostasis_DNA_Repair_Quality_Control": [
+      "DNA damage response",
+      "protein phosphorylation",
+      "protein ubiquitination",
+      "proteolysis"
+    ],
+    "Addiction_Substance_Response_Wrapper": [
+      "Morphine addiction - Mus musculus (mouse)",
+      "Nicotine addiction - Mus musculus (mouse)"
+    ],
+    "Growth_Survival_Stress_Signaling": [
+      "Apelin signaling pathway - Mus musculus (mouse)",
+      "Cellular senescence - Mus musculus (mouse)",
+      "G protein-coupled receptor signaling pathway",
+      "MAPK signaling pathway - Mus musculus (mouse)",
+      "PI3K-Akt signaling pathway - Mus musculus (mouse)",
+      "Rap1 signaling pathway - Mus musculus (mouse)",
+      "Relaxin signaling pathway - Mus musculus (mouse)",
+      "cAMP signaling pathway - Mus musculus (mouse)",
+      "gene expression",
+      "intracellular signal transduction",
+      "negative regulation of DNA-templated transcription",
+      "negative regulation of apoptotic process",
+      "negative regulation of cell population proliferation",
+      "negative regulation of gene expression",
+      "negative regulation of neuron apoptotic process",
+      "negative regulation of transcription by RNA polymerase II",
+      "positive regulation of DNA-templated transcription",
+      "positive regulation of ERK1 and ERK2 cascade",
+      "positive regulation of MAPK cascade",
+      "positive regulation of apoptotic process",
+      "positive regulation of cell population proliferation",
+      "positive regulation of gene expression",
+      "positive regulation of phosphatidylinositol 3-kinase/protein kinase B signal transduction",
+      "positive regulation of transcription by RNA polymerase II",
+      "regulation of gene expression",
+      "regulation of transcription by RNA polymerase II",
+      "response to hypoxia",
+      "response to oxidative stress",
+      "response to xenobiotic stimulus",
+      "signal transduction"
+    ],
+    "Transport_Trafficking_Membrane_Homeostasis": [
+      "Calcium signaling pathway - Mus musculus (mouse)",
+      "Neuroactive ligand-receptor interaction - Mus musculus (mouse)",
+      "monoatomic ion transmembrane transport",
+      "monoatomic ion transport",
+      "regulation of postsynaptic membrane potential",
+      "transmembrane transport"
+    ],
+    "Cancer_Wrapper_Pathways": [
+      "Hepatocellular carcinoma - Mus musculus (mouse)",
+      "MicroRNAs in cancer - Mus musculus (mouse)",
+      "Pathways in cancer - Mus musculus (mouse)"
+    ],
+    "Energy_Metabolism_Mitochondria": [
+      "Diabetic cardiomyopathy - Mus musculus (mouse)",
+      "Thermogenesis - Mus musculus (mouse)"
+    ]
+  }
+}

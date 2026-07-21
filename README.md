@@ -55,7 +55,7 @@ External source datasets are not redistributed. Their download and placement ins
 
 ## Environments
 
-The three Python environments used for the manuscript are documented as both Conda YAML exports and `pip freeze` snapshots in `environment_exports/`. Their exported prefixes point to the Linux/WSL analysis context (`/home/jaypi/anaconda3/envs/...`); those prefixes may differ when an environment is recreated elsewhere:
+The three Python environments used for the manuscript are documented as both Conda YAML exports and `pip freeze` snapshots in `environment_exports/`. Their exported prefixes point to the Linux/WSL analysis context; those prefixes may differ when an environment is recreated elsewhere:
 
 - `squidpy` — general spatial analyses and most notebooks
 - `mapmycells` — MapMyCells label transfer

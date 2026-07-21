@@ -12,5 +12,8 @@
 module load miniconda/3
 source activate scanpy
 export TARGET_SIM=$SLURM_ARRAY_TASK_ID
-cd /gpfs/Home/dpp5572/aldex3/
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BENCHMARK_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+export SIMULATION_WORK_DIR="${SIMULATION_WORK_DIR:-$BENCHMARK_DIR/results}"
+cd "$BENCHMARK_DIR"
 python python/05_run_scanpy_wilcoxon.py

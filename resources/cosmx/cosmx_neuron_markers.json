@@ -1,0 +1,40 @@
+{
+  "IT-ET Glut": [
+    "Slc17a7",
+    "Cck",
+    "Nrgn",
+    "Sv2b"
+  ],
+  "NP-CT-L6b Glut": [
+    "Adcy2",
+    "Fxyd6",
+    "Pde1a",
+    "Gria3",
+    "Atp2b4"
+  ],
+  "DG-IMN Glut": [
+    "Gria1",
+    "Sema5a",
+    "Synpr",
+    "Grin2a"
+  ],
+  "MH-LH Glut": [
+    "Htr2c",
+    "Cbln2"
+  ],
+  "TH Glut": [
+    "Tcf7l2",
+    "Cck",
+    "Chrna4",
+    "Cntn4",
+    "Lrrc7",
+    "Epha6",
+    "Camk2d",
+    "Calb2"
+  ],
+  "GABA": [
+    "Gad1",
+    "Gad2",
+    "Slc32a1"
+  ]
+}

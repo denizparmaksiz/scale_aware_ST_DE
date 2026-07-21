@@ -1,0 +1,79 @@
+{
+  "Astro": [
+    "Aldoc",
+    "Aqp4",
+    "Cxcl14",
+    "Gfap",
+    "Gja1",
+    "Slc1a3",
+    "Slc4a4",
+    "Sox9"
+  ],
+  "EC": [
+    "Cldn5",
+    "Esam",
+    "Flt1",
+    "Id1",
+    "Igfbp7",
+    "Itm2a",
+    "Pltp",
+    "Slc2a1"
+  ],
+  "Ependymal": [
+    "Foxj1",
+    "Htr2c",
+    "Ttr",
+    "Clu"
+  ],
+  "Immune": [
+    "C1qa",
+    "C1qb",
+    "C1qc",
+    "Csf1r",
+    "Ctss",
+    "Cx3cr1",
+    "Tmem119",
+    "Trem2"
+  ],
+  "OLG": [
+    "Cryab",
+    "Fth1",
+    "Gpr37",
+    "Mag",
+    "Mbp",
+    "Mobp",
+    "Mog",
+    "Ndrg1",
+    "Pllp",
+    "Plp1"
+  ],
+  "OPC": [
+    "Gpr17",
+    "Olig1",
+    "Olig2",
+    "Pdgfra",
+    "Ptprz1",
+    "Sulf2",
+    "Tnr",
+    "Vcan"
+  ],
+  "PC": [
+    "Higd1b",
+    "Igfbp7",
+    "Notch3",
+    "Pdgfrb",
+    "Rgs5",
+    "Vtn"
+  ],
+  "VLMC": [
+    "Col1a1",
+    "Col1a2",
+    "Dcn"
+  ],
+  "VSMC": [
+    "Acta2",
+    "Crip1",
+    "Myl9",
+    "Tagln"
+  ]
+}

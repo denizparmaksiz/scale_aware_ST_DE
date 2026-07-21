@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scale-aware-st"
+version = "0.1.0"
+description = "Reproducibility utilities for scale-aware spatial transcriptomics analyses"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib==3.9.0",
+  "numpy==1.26.4",
+  "openpyxl==3.1.4",
+  "pandas==2.2.2",
+  "venn==0.1.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["scale_aware_st*", "kimlabspatial*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

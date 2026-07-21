@@ -1,0 +1,441 @@
+---
+title: "Tutorial: Scale-informed mixed-effects differential expression with ALDEx3"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = TRUE, warning = TRUE)
+```
+
+# Overview
+
+This tutorial demonstrates one scale-informed ALDEx3 mixed-effects analysis
+using a small, downsampled subset of the primary MERFISH dataset.
+
+It preserves the manuscript workflow:
+
+- raw counts are stored as genes × cells;
+- cells are aligned between counts and metadata;
+- genes detected in at least 20% of cells are retained;
+- age and cell volume are modeled as fixed effects;
+- batch is modeled as a random intercept;
+- an informed prior represents an expected 20% reduction in total transcript
+  abundance in old cells;
+- ALDEx3 propagates compositional and scale uncertainty.
+
+For desktop use, this tutorial uses `method = "lme4"` and 100 Monte Carlo
+samples. The manuscript analysis used 2,000 samples to optimize stability and
+convergence.
+
+# Expected directory structure
+
+```text
+tutorial/
+├── tutorial_ALDEx3.Rmd
+├── data/
+│   ├── tutorial_counts.csv
+│   └── tutorial_metadata.xlsx
+└── output/
+```
+
+The count matrix must have genes in rows and cells in columns. Its first CSV
+column contains gene names, and its first row contains cell identifiers. The
+first metadata column must contain the same cell identifiers.
+
+# Load packages
+
+```{r packages}
+library(ALDEx3)
+library(lme4)
+library(readxl)
+library(writexl)
+library(ggplot2)
+```
+
+# Analysis parameters
+
+```{r parameters}
+count_file <- file.path("data", "tutorial_counts.csv")
+metadata_file <- file.path("data", "tutorial_metadata.xlsx")
+output_dir <- "output"
+
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+
+detection_threshold <- 0.20
+S_draws <- 100
+gamma_val <- 0.80
+scale_sd <- 0.25
+ncores <- 1
+
+# Used only to make the tutorial reproducible.
+set.seed(42)
+```
+
+# Read counts
+
+```{r read-counts}
+seq.data <- read.csv(
+  count_file,
+  row.names = 1,
+  check.names = FALSE
+)
+
+seq.data <- as.data.frame(seq.data)
+
+dim(seq.data)
+seq.data[seq_len(min(5, nrow(seq.data))),
+         seq_len(min(5, ncol(seq.data)))]
+```
+
+```{r validate-counts}
+if (anyNA(seq.data)) {
+  stop("The count matrix contains missing values.")
+}
+
+if (any(as.matrix(seq.data) < 0)) {
+  stop("The count matrix contains negative values.")
+}
+
+if (any(as.matrix(seq.data) != floor(as.matrix(seq.data)))) {
+  stop("The count matrix contains non-integer values.")
+}
+
+if (anyDuplicated(rownames(seq.data))) {
+  stop("The count matrix contains duplicated gene names.")
+}
+
+if (anyDuplicated(colnames(seq.data))) {
+  stop("The count matrix contains duplicated cell identifiers.")
+}
+```
+
+# Read and prepare metadata
+
+The first metadata column contains cell identifiers. Required columns are
+`Age`, `batch`, and `volume`.
+
+```{r read-metadata}
+metadata <- read_excel(metadata_file) |>
+  as.data.frame()
+
+rownames(metadata) <- metadata[[1]]
+metadata <- metadata[, -1, drop = FALSE]
+
+required_columns <- c("Age", "batch", "volume")
+missing_columns <- setdiff(required_columns, colnames(metadata))
+
+if (length(missing_columns) > 0) {
+  stop(
+    "Metadata is missing required columns: ",
+    paste(missing_columns, collapse = ", ")
+  )
+}
+
+if (anyDuplicated(rownames(metadata))) {
+  stop("The metadata contains duplicated cell identifiers.")
+}
+
+metadata$age_binary <- ifelse(metadata$Age == "Yng", 0, 1)
+metadata$batch <- factor(metadata$batch)
+metadata$volume <- as.numeric(metadata$volume)
+
+head(metadata)
+table(metadata$Age, useNA = "ifany")
+table(metadata$batch, useNA = "ifany")
+```
+
+```{r validate-metadata}
+unexpected_age_labels <- setdiff(unique(metadata$Age), c("Yng", "Old"))
+
+if (length(unexpected_age_labels) > 0) {
+  stop(
+    "Unexpected values in Age: ",
+    paste(unexpected_age_labels, collapse = ", ")
+  )
+}
+
+if (anyNA(metadata$volume)) {
+  stop("The volume column contains missing or nonnumeric values.")
+}
+
+if (nlevels(metadata$batch) < 2) {
+  stop("At least two batch levels are required for the random-intercept model.")
+}
+```
+
+# Align cells
+
+```{r align-cells}
+common_cells <- intersect(colnames(seq.data), rownames(metadata))
+
+if (length(common_cells) == 0) {
+  stop("No overlapping cell identifiers were found.")
+}
+
+# Preserve count-matrix column order.
+common_cells <- colnames(seq.data)[colnames(seq.data) %in% common_cells]
+
+seq.data <- seq.data[, common_cells, drop = FALSE]
+metadata <- metadata[common_cells, , drop = FALSE]
+metadata <- droplevels(metadata)
+
+stopifnot(identical(colnames(seq.data), rownames(metadata)))
+
+dim(seq.data)
+dim(metadata)
+```
+
+# Filter genes by detection fraction
+
+```{r filter-genes}
+expression_fraction <- rowMeans(seq.data > 0, na.rm = TRUE)
+keep_genes <- expression_fraction >= detection_threshold
+filt_data <- seq.data[keep_genes, , drop = FALSE]
+
+if (nrow(filt_data) == 0) {
+  stop("No genes remain after detection filtering.")
+}
+
+data.frame(
+  genes_before_filtering = nrow(seq.data),
+  genes_after_filtering = nrow(filt_data),
+  cells = ncol(filt_data)
+)
+```
+
+```{r detection-summary}
+detection_summary <- data.frame(
+  gene = names(expression_fraction),
+  detection_fraction = expression_fraction,
+  retained = keep_genes,
+  row.names = NULL
+)
+
+head(
+  detection_summary[
+    order(detection_summary$detection_fraction, decreasing = TRUE),
+  ],
+  10
+)
+```
+
+# Specify the mixed-effects model
+
+The model is:
+
+```text
+age_binary + volume + (1 | batch)
+```
+
+```{r model-formula}
+r_formula <- ~ age_binary + volume + (1 | batch)
+
+fixed_effect_design <- model.matrix(
+  lme4::nobars(r_formula),
+  data = metadata
+)
+
+if (ncol(fixed_effect_design) > nrow(fixed_effect_design)) {
+  stop(
+    "The fixed-effect design has more parameters than observations: P = ",
+    ncol(fixed_effect_design),
+    ", N = ",
+    nrow(fixed_effect_design),
+    "."
+  )
+}
+
+colnames(fixed_effect_design)
+```
+
+# Construct the informed scale matrix
+
+The informed model assumes that old cells have, on average, 80% of the total
+transcript abundance of young cells.
+
+```{r informed-scale}
+delta_age <- log2(gamma_val)
+
+theta.perp <- rnorm(
+  S_draws,
+  mean = delta_age,
+  sd = scale_sd
+)
+
+logScale_mat <- metadata$age_binary %*% t(theta.perp)
+
+stopifnot(
+  nrow(logScale_mat) == ncol(filt_data),
+  ncol(logScale_mat) == S_draws
+)
+
+dim(logScale_mat)
+summary(as.vector(logScale_mat[metadata$age_binary == 0, , drop = FALSE]))
+summary(as.vector(logScale_mat[metadata$age_binary == 1, , drop = FALSE]))
+```
+
+Young cells receive an offset of zero because `age_binary = 0`. Old cells
+receive the sampled age-associated log2-scale offset because
+`age_binary = 1`.
+
+# Run ALDEx3
+
+```{r run-aldex, cache=TRUE}
+return_pars <- c(
+  "X",
+  "estimate",
+  "std.error",
+  "p.val",
+  "p.val.adj",
+  "logComp",
+  "logScale",
+  "random.effects"
+)
+
+aldex.res <- aldex(
+  Y = filt_data,
+  X = r_formula,
+  data = metadata,
+  method = "lme4",
+  nsample = S_draws,
+  scale = logScale_mat,
+  n.cores = ncores,
+  return.pars = return_pars
+)
+```
+
+Because `scale` is supplied directly as a cells × Monte Carlo matrix, `gamma`
+is not passed separately.
+
+# Build the results table
+
+```{r build-results}
+est_mat <- apply(
+  aldex.res$estimate,
+  c(1, 2),
+  mean,
+  na.rm = TRUE
+)
+
+se_mat <- apply(
+  aldex.res$std.error,
+  c(1, 2),
+  mean,
+  na.rm = TRUE
+)
+
+p_mat <- aldex.res$p.val
+padj_mat <- aldex.res$p.val.adj
+
+est_t <- t(est_mat)
+se_t <- t(se_mat)
+p_t <- t(p_mat)
+padj_t <- t(padj_mat)
+
+genes <- rownames(est_t)
+effects <- colnames(est_t)
+
+results.df <- data.frame(
+  gene = genes,
+  stringsAsFactors = FALSE
+)
+
+for (eff in effects) {
+  results.df[[paste0(eff, ":est")]] <- est_t[, eff]
+  results.df[[paste0(eff, ":estSE")]] <- se_t[, eff]
+  results.df[[paste0(eff, ":pval")]] <- p_t[, eff]
+  results.df[[paste0(eff, ":pval.adj")]] <- padj_t[, eff]
+}
+
+head(results.df)
+```
+
+# Inspect the age effect
+
+```{r age-effect}
+age_effect <- effects[grepl("^age_binary", effects)]
+
+if (length(age_effect) != 1) {
+  stop(
+    "Expected exactly one age coefficient, but found: ",
+    paste(age_effect, collapse = ", ")
+  )
+}
+
+age_estimate_column <- paste0(age_effect, ":est")
+age_se_column <- paste0(age_effect, ":estSE")
+age_pvalue_column <- paste0(age_effect, ":pval")
+age_padj_column <- paste0(age_effect, ":pval.adj")
+
+age_results <- results.df[
+  order(results.df[[age_padj_column]], results.df[[age_pvalue_column]]),
+  c(
+    "gene",
+    age_estimate_column,
+    age_se_column,
+    age_pvalue_column,
+    age_padj_column
+  )
+]
+
+head(age_results, 20)
+```
+
+Positive age coefficients indicate higher inferred log abundance in old cells
+relative to young cells. Negative coefficients indicate lower inferred
+abundance in old cells.
+
+# Plot age effects
+
+```{r plot-age-effects, fig.width=8, fig.height=5}
+plot_data <- age_results
+plot_data$significant <- plot_data[[age_padj_column]] < 0.05
+
+ggplot(
+  plot_data,
+  aes(
+    x = .data[[age_estimate_column]],
+    y = -log10(.data[[age_padj_column]])
+  )
+) +
+  geom_point(aes(shape = significant), alpha = 0.7) +
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  labs(
+    x = "Old-versus-young ALDEx3 estimate",
+    y = expression(-log[10]("adjusted p-value")),
+    shape = "Adjusted p < 0.05",
+    title = "Scale-informed ALDEx3 age effects"
+  ) +
+  theme_classic()
+```
+
+# Save output
+
+```{r save-output}
+output_file <- file.path(
+  output_dir,
+  "tutorial_aldex3_lme4_results.xlsx"
+)
+
+write_xlsx(
+  list(
+    all_effects = results.df,
+    age_effect = age_results,
+    gene_filter = detection_summary
+  ),
+  path = output_file
+)
+
+output_file
+```
+
+# Session information
+
+```{r session-info}
+sessionInfo()
+```

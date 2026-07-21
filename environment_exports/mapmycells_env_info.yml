@@ -1,0 +1,4 @@
+name: mapmycells
+channels:
+  - defaults
+prefix: /home/jaypi/anaconda3/envs/mapmycells

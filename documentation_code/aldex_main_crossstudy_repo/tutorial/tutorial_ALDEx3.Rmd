@@ -39,7 +39,7 @@ tutorial/
 ├── tutorial_ALDEx3.Rmd
 ├── data/
 │   ├── tutorial_counts.csv
-│   └── tutorial_metadata.xlsx
+│   └── tutorial_metadata.csv
 └── output/
 ```
 
@@ -52,7 +52,6 @@ first metadata column must contain the same cell identifiers.
 ```{r packages}
 library(ALDEx3)
 library(lme4)
-library(readxl)
 library(writexl)
 library(ggplot2)
 ```
@@ -61,7 +60,7 @@ library(ggplot2)
 
 ```{r parameters}
 count_file <- file.path("data", "tutorial_counts.csv")
-metadata_file <- file.path("data", "tutorial_metadata.xlsx")
+metadata_file <- file.path("data", "tutorial_metadata.csv")
 output_dir <- "output"
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -120,8 +119,11 @@ The first metadata column contains cell identifiers. Required columns are
 `Age`, `batch`, and `volume`.
 
 ```{r read-metadata}
-metadata <- read_excel(metadata_file) |>
-  as.data.frame()
+metadata <- read.csv(
+  metadata_file,
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
 
 rownames(metadata) <- metadata[[1]]
 metadata <- metadata[, -1, drop = FALSE]

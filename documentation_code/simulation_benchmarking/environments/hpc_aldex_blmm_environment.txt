@@ -1,0 +1,27 @@
+# HPC ALDEx3 BLMM Environment
+
+## Environment
+R version: 4.5.0
+Platform: x86_64-pc-linux-gnu
+Operating system: Red Hat Enterprise Linux 8.10 (Ootpa)
+
+## Key package versions
+
+ALDEx3      1.1.0
+lme4        2.0.1
+lmerTest    3.2.1
+nlme        3.1-168
+Matrix      1.7-4
+matrixStats 1.5.0
+abind       1.4-8
+MASS        7.3-65
+
+## ALDEx3 blmm implementation
+
+Repository: GitHub (jsilve24/ALDEx3)
+Branch: fast-lmms
+Commit: 68004e7e8f89b825c8d8b11166ffb76696605b03
+
+## Notes
+
+This environment contains the custom `fast-lmms` development branch of ALDEx3 used for the mixed-effects (BLMM) analyses in this study. At the time of analysis, these changes resided on a development branch and had not yet been merged into the main ALDEx3 repository.

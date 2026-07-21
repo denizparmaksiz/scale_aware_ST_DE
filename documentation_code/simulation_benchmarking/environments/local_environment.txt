@@ -1,0 +1,19 @@
+# Local Benchmarking Summary Environment
+
+## Environment
+
+R version: 4.4.2
+Platform: x86_64-w64-mingw32/x64
+Operating system: Windows 11 x64 (build 26200)
+Time zone: America/New_York
+
+## Key package versions
+
+dplyr    1.1.4
+readr    2.1.5
+stringr  1.6.0
+writexl  1.5.4
+
+## Notes
+
+This local R environment was used to consolidate method-specific simulation outputs, calculate benchmarking summary statistics, and export combined result tables. The installed `edgeR` and `limma` packages were present in the local R library but were not required by the benchmarking summary scripts.

@@ -1,0 +1,38 @@
+# HPC MAST / Simulation Generation Environment
+
+## Environment
+R version: 4.5.0
+Platform: x86_64-pc-linux-gnu
+Operating system: Red Hat Enterprise Linux 8.10 (Ootpa)
+
+Bioconductor version: 3.21
+
+## Key package versions
+
+MAST        1.33.0
+seqgendiff  1.2.4
+Matrix      1.7-4
+lme4        1.1-37
+dplyr       1.1.4
+readxl      1.4.5
+data.table  1.18.0
+stringr     1.5.2
+writexl     1.5.4
+ALDEx3      0.4.0
+lmerTest    3.1-3
+
+## Package provenance
+
+MAST
+- Repository: Bioconductor 3.21
+- git branch: devel
+- git commit: 35654e5
+
+seqgendiff
+- Repository: CRAN
+- Version: 1.2.4
+
+ALDEx3
+- Repository: GitHub (jsilve24/ALDEx3)
+- Branch: HEAD
+- Commit: 8c05ad40c41279dffa05dc808167ffcd53207740

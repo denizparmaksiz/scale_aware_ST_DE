@@ -1,0 +1,30 @@
+# HPC Negative Binomial Environment
+
+## Environment
+R version: 4.5.0
+Platform: x86_64-pc-linux-gnu
+Operating system: Red Hat Enterprise Linux 8.10 (Ootpa)
+
+## Key package versions
+
+glmmTMB    1.1.14
+TMB         1.9.21
+Matrix      1.7-4
+lme4        1.1-37
+MASS        7.3-65
+nlme        3.1-168
+data.table  1.18.0
+
+## Package provenance
+
+glmmTMB
+- Repository: CRAN
+- Version: 1.1.14
+
+TMB
+- Repository: CRAN
+- Version: 1.9.21
+
+## Notes
+
+This environment was used for the negative binomial generalized linear mixed-effects analyses performed with `glmmTMB`. Both `glmmTMB` and its underlying modeling framework (`TMB`) were standard CRAN releases.

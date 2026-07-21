@@ -1,0 +1,28 @@
+# GO Enrichment Environment
+
+## Environment
+
+R version: 4.4.2
+Platform: x86_64-w64-mingw32/x64
+Operating system: Windows 11 x64 (build 26200)
+
+## Key package versions
+
+topGO        2.58.0
+org.Mm.eg.db 3.20.0
+readxl       1.4.5
+writexl      1.5.4
+
+## Package source
+
+topGO
+- Repository: Bioconductor
+- Version: 2.58.0
+
+org.Mm.eg.db
+- Repository: Bioconductor
+- Version: 3.20.0
+
+## Notes
+
+This R library was used for Gene Ontology biological process enrichment analyses performed with topGO. The enrichment workflow was adapted from the published Sun et al. analysis pipeline to perform GO enrichment on ALDEx differential-expression results while retaining the original enrichment methodology.

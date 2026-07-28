@@ -6,12 +6,13 @@ This repository contains the numbered analysis notebooks and supporting code for
 
 1. Clone this repository and open it at the repository root.
 2. Download the accompanying data from [Zenodo (DOI: 10.5281/zenodo.21420404)](https://doi.org/10.5281/zenodo.21420404).
-3. Place or link the downloaded files using the directory layout documented in the deposit README and `PUBLICATION_UPLOAD_MANIFEST.md`.
-4. Install the repository helpers with `pip install -e .` from the repository root.
-5. Use the environment export matching the analysis in `environment_exports/`.
-6. Run notebooks from `documentation_code/` in numeric order as needed.
+3. Extract the five Zenodo archives under `data/`, preserving the directories inside each archive.
+4. Create the tested core Python environment using the instructions below.
+5. Run notebooks from `documentation_code/` using the registered `scale-aware-st-de` kernel.
 
-Supplementary workbooks and large manuscript data are distributed through Zenodo rather than committed to GitHub. By default, notebooks look for them under `Supplementary tables/` and `data/`, respectively. These locations can be overridden without editing notebook code:
+Supplementary workbooks and large manuscript data are distributed through Zenodo rather than committed to GitHub. By default, notebooks use a single extracted Zenodo tree under `data/`; supplementary workbooks are therefore expected at `data/supplementary_files/`. Third-party inputs that cannot be redistributed belong under `external_data/`. See `DATA_DOWNLOADS.md` for the complete layout, download links, and notebook-by-notebook requirements.
+
+All locations can be overridden without editing notebook code:
 
 ```text
 SCALE_AWARE_ST_REPO_ROOT
@@ -51,17 +52,105 @@ The historical BLMM sensitivity run is the one exception: complete per-stratum B
 9. `09_cosmx_figs_DE.ipynb` — CosMx differential-expression figures
 10. `10_cosmx_merfish_module_analysis.ipynb` — cross-platform CosMx/MERFISH module analysis
 
-External source datasets are not redistributed. Their download and placement instructions are kept beside the relevant workflows, including `documentation_code/FIGURE1D_DATA_DOWNLOADS.md` and `documentation_code/cosmx_python_scripts/cosmx_download_instructions.md`.
+External source datasets are not redistributed. `DATA_DOWNLOADS.md` is the central download and placement guide. The Figure 1D and raw CosMx workflows also retain their more detailed guides under `documentation_code/`.
 
-## Environments
+## Installation
 
-The three Python environments used for the manuscript are documented as both Conda YAML exports and `pip freeze` snapshots in `environment_exports/`:
+The numbered notebooks were tested with **Python 3.10.14**. The core dependency
+set deliberately pins the manuscript-era NumPy, Zarr, SpatialData, Scanpy, and
+Squidpy versions; installing current unpinned releases is not supported. The
+Squidpy build is pinned to commit
+`df8e042264a99e489573273e449d585e3ff6143c`.
 
-- `squidpy` — general spatial analyses and most notebooks
-- `mapmycells` — MapMyCells label transfer
-- `scvi_abc` — scANVI/ABC Atlas workflow
+### Recommended Conda installation
 
-The HPC R and simulation environments are documented under `documentation_code/aldex_main_crossstudy_repo/environments/` and `documentation_code/simulation_benchmarking/`.
+Run these commands from the repository root:
+
+```bash
+conda env create -f environment_exports/environment-core.yml
+conda activate scale-aware-st-de
+```
+
+The environment file creates Python 3.10.14 and installs this repository in
+editable mode with its tested core dependencies. Editable installation means
+changes to `src/scale_aware_st/` and `kimlabspatial/` are used immediately;
+it does not copy the source code into the environment.
+
+If the Conda environment already exists, update it from the repository root:
+
+```bash
+conda env update -f environment_exports/environment-core.yml --prune
+```
+
+### Manual installation into a fresh Python 3.10 environment
+
+```bash
+conda create -n scale-aware-st-de python=3.10.14 pip git
+conda activate scale-aware-st-de
+python -m pip install -e .
+```
+
+`pip install -e .` now installs the full core environment required by the
+numbered notebooks, rather than only the small repository-helper dependency
+set. The same portable pins are listed in
+`environment_exports/requirements-core.txt`.
+
+### Register the Jupyter kernel
+
+```bash
+python -m ipykernel install --user --name scale-aware-st-de --display-name "Python (scale-aware-st-de)"
+```
+
+Use `Python (scale-aware-st-de)` when opening notebooks under
+`documentation_code/`. A Jupyter frontend may be installed separately if one
+is not already available, for example with `python -m pip install jupyterlab`.
+
+### Verify the installation
+
+```bash
+python -m pip check
+python -c "import scanpy, squidpy, spatialdata, zarr; import kimlabspatial.preprocessing, scale_aware_st; print('Environment OK')"
+```
+
+To run the repository tests as well:
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest
+```
+
+### Optional Scrublet support
+
+Scrublet is only needed for raw-data preprocessing when doublet detection is
+explicitly enabled, such as `pool_adatas(..., scrub=True)`. It is not required
+for the numbered notebooks using deposited processed data.
+
+```bash
+python -m pip install -e ".[scrublet]"
+```
+
+Alternatively, install
+`environment_exports/requirements-scrublet.txt`. On native Windows, Annoy may
+require Microsoft Visual C++ Build Tools because a compatible prebuilt wheel
+may not be available. Linux or WSL is therefore recommended for this optional
+raw-preprocessing route. Without Scrublet, the package imports normally and
+raises an informative error only if doublet detection is requested.
+
+### Other manuscript environments
+
+The historical exports remain under `environment_exports/` as provenance:
+
+- `squidpy` was the main analysis environment and underlies the portable core
+  environment above.
+- `mapmycells` is needed only to recompute the MapMyCells stage of CosMx
+  preprocessing.
+- `scvi_abc` is needed only to recompute the scANVI/ABC Atlas stage of CosMx
+  preprocessing.
+
+Neither `mapmycells` nor `scvi_abc` is required to run the numbered notebooks
+from the deposited processed CosMx object. The HPC R and simulation environments
+are documented under `documentation_code/aldex_main_crossstudy_repo/environments/`
+and `documentation_code/simulation_benchmarking/`.
 
 ## Data publication
 

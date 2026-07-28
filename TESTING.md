@@ -49,6 +49,8 @@ affected notebook contains a mode preflight and that workflows crossing the
 external R/ALDEx boundary reject an empty workbook collection with a specific
 next-step message.
 
-The analytical bodies of the notebooks were not changed. The published routes
-were not rerun after the preflight checks were added and should receive a short
-regression smoke test in the configured environment before release.
+The analytical bodies of the notebooks were not changed. Notebook 07's
+published route was rerun after its external-input preflight was added and
+passed. The other affected published routes were not rerun after the preflight
+checks were added and should receive a short regression smoke test in the
+configured environment before release.

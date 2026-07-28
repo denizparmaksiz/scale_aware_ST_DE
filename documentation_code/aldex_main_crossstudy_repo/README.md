@@ -8,7 +8,6 @@ This directory contains the R and SLURM workflows used for the manuscript's main
 - `R/01_...R` through `R/08_...R`: run-specific analyses.
 - `hpc/submit_aldex.sh`: shared SLURM launcher.
 - `config/aldex_runs.csv`: manifest linking each manuscript analysis to its script, engine, model, inputs, and outputs.
-- `docs/repo_planning_ALDEx.md`: remaining documentation and environment tasks.
 
 ## Input format
 
@@ -66,9 +65,3 @@ Do not replace the historical `blmm` dependency with another mixed-model engine 
 Final manuscript analyses use the values recorded in `config/aldex_runs.csv`, generally 2,000 Monte Carlo samples. The Sun continuous-age cell-type analysis was confirmed to use 1,000 samples.
 
 The original scripts did not set a fixed random seed. The cleaned scripts preserve that behavior. A seed should not be added to the manuscript reproduction workflow without documenting that change.
-
-## Remaining checks before publication
-
-1. Export `sessionInfo()` and/or an `renv.lock` from each HPC R library.
-2. Verify each cleaned script against at least one representative historical input/output pair.
-3. Add a small desktop tutorial separately; it should use reduced MC sampling and clearly state that it will not reproduce the final manuscript results.

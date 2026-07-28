@@ -163,7 +163,12 @@ and `documentation_code/simulation_benchmarking/`.
 
 ## Data publication
 
-`PUBLICATION_UPLOAD_MANIFEST.md` is the authoritative file-by-file decision record for GitHub, Zenodo, and externally downloaded data. During peer review, the private preview link supplied with the manuscript provides access to the draft deposit. DOI `10.5281/zenodo.21420404` is reserved and will be converted to a live link in this README after the record is published. The deposit includes its own `README.md`, which documents the archive layout, and `SHA256SUMS.txt`, which records checksums for the deposited source files.
+Study-generated data and supplementary files are deposited under reserved DOI
+`10.5281/zenodo.21420404`. During peer review, access is provided through the
+private Zenodo link supplied with the manuscript; the DOI will resolve after the
+record is published. The deposit includes its own `README.md`, which documents
+the archive layout, and `SHA256SUMS.txt`, which records checksums for the
+deposited source files.
 
 The deposit provides five logical groups (`figure1`, `primary_merfish`, `simulation`, `cosmx`, and `supplementary_files`) as separate ZIP archives, together with the Zenodo README and checksum file. Separate archives make selective downloading practical while preserving the directory structure expected by the notebooks.
 

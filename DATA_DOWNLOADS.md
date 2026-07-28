@@ -14,9 +14,10 @@ overrides are described at the end of this guide.
 
 ## 1. Study data from Zenodo
 
-Download the five archives from
-[Zenodo record 10.5281/zenodo.21420404](https://doi.org/10.5281/zenodo.21420404)
-and extract each archive directly under `data/`. The result should be:
+During peer review, download the five archives using the private Zenodo preview
+link supplied with the manuscript. DOI `10.5281/zenodo.21420404` is reserved but
+will not resolve until the record is published. Extract each archive directly
+under `data/`. The result should be:
 
 ```text
 data/
@@ -132,9 +133,6 @@ exact uint16 ontology workbook used by the analysis is supplied at:
 ```text
 resources/allen_ccf/CCFv3OntologyStructure_u16.xlsx
 ```
-
-In particular, `atlas_info_KimRef_v2_segmentation.xlsx` is not the ontology
-input used by notebook 04.
 
 Marker lists, frozen functional annotations, and module dictionaries are also
 already present under `resources/`.

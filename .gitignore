@@ -28,6 +28,7 @@ Supplementary tables/
 
 # Internal planning and pre-cleanup working artifacts
 repo_planning.md
+PUBLICATION_UPLOAD_MANIFEST.md
 repository_inventory.json
 asset_inventory.json
 REPOSITORY_INVENTORY.md

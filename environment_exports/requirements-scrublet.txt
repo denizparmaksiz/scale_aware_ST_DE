@@ -1,0 +1,3 @@
+# Optional raw-preprocessing dependency. Not needed by the numbered notebooks.
+scrublet==0.2.3
+annoy==1.17.3

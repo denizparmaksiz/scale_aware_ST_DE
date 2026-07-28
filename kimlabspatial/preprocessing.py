@@ -1,7 +1,10 @@
 import scanpy as sc
 import numpy as np
 import pandas as pd
-import scrublet as scr
+try:
+    import scrublet as scr
+except ImportError:  # Optional: only required for doublet detection.
+    scr = None
 from itertools import combinations
 from matplotlib import pyplot as plt
 from pathlib import Path
@@ -292,6 +295,13 @@ def exclude_doublets(adata, savestr, grouping= 'sample',verbose= False, save=Tru
         Anndata object.
     """
 
+
+    if scr is None:
+        raise ImportError(
+            "Scrublet is required for doublet detection. Install the optional "
+            "dependencies with `pip install -e '.[scrublet]'` or "
+            "`pip install -r environment_exports/requirements-scrublet.txt`."
+        )
 
     if isinstance(grouping, str):
         all_doublet_scores = []

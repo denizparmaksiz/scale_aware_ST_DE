@@ -5,7 +5,7 @@ This repository contains the numbered analysis notebooks and supporting code for
 ## Start here
 
 1. Clone this repository and open it at the repository root.
-2. Download the accompanying data from [Zenodo (DOI: 10.5281/zenodo.21420404)](https://doi.org/10.5281/zenodo.21420404).
+2. During peer review, download the accompanying data using the private Zenodo preview link supplied with the manuscript. DOI `10.5281/zenodo.21420404` is reserved but will not resolve until the record is published.
 3. Extract the five Zenodo archives under `data/`, preserving the directories inside each archive.
 4. Create the tested core Python environment using the instructions below.
 5. Run notebooks from `documentation_code/` using the registered `scale-aware-st-de` kernel.
@@ -154,7 +154,7 @@ and `documentation_code/simulation_benchmarking/`.
 
 ## Data publication
 
-`PUBLICATION_UPLOAD_MANIFEST.md` is the authoritative file-by-file decision record for GitHub, Zenodo, and externally downloaded data. The [Zenodo deposit](https://doi.org/10.5281/zenodo.21420404) includes its own `README.md`, which documents the archive layout, and `SHA256SUMS.txt`, which records checksums for the deposited source files.
+`PUBLICATION_UPLOAD_MANIFEST.md` is the authoritative file-by-file decision record for GitHub, Zenodo, and externally downloaded data. During peer review, the private preview link supplied with the manuscript provides access to the draft deposit. DOI `10.5281/zenodo.21420404` is reserved and will be converted to a live link in this README after the record is published. The deposit includes its own `README.md`, which documents the archive layout, and `SHA256SUMS.txt`, which records checksums for the deposited source files.
 
 The deposit provides five logical groups (`figure1`, `primary_merfish`, `simulation`, `cosmx`, and `supplementary_files`) as separate ZIP archives, together with the Zenodo README and checksum file. Separate archives make selective downloading practical while preserving the directory structure expected by the notebooks.
 

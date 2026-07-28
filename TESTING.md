@@ -39,3 +39,19 @@ were at floating-point rounding scale (at most approximately `9e-16`).
 
 Warnings stating that `FigureCanvasAgg` is non-interactive are expected during
 headless smoke testing and do not indicate analysis failures.
+
+## Post-feedback mode-contract validation
+
+After the published/recompute documentation and preflight checks were added,
+all code cells in notebooks 03–09 were parsed again as Python and all notebooks
+were parsed as valid notebook JSON. Static regression tests verify that every
+affected notebook contains a mode preflight and that workflows crossing the
+external R/ALDEx boundary reject an empty workbook collection with a specific
+next-step message.
+
+The analytical bodies of the notebooks were not changed. A second full runtime
+execution was not performed in the Codex Windows session because that session
+cannot access the separately configured WSL distribution and does not contain
+the exported Squidpy environment. The published routes should receive a short
+regression smoke test in the configured environment before final release; a
+clean native-Windows installation test remains reserved for the final QA block.

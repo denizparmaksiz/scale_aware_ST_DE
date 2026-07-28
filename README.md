@@ -32,8 +32,17 @@ Notebooks that consume ALDEx results expose this flag near the top:
 ALDEX_RESULT_MODE = "published"  # choose "published" or "recompute"
 ```
 
-- `published` loads the pooled, frozen ALDEx results from Additional Files 4–6 and skips the corresponding model-fitting/postprocessing step.
-- `recompute` reads the individual per-stratum ALDEx result workbooks produced by the documented R workflow and reproduces the downstream pooled/postprocessed outputs.
+- `published` is the self-contained downstream reproduction route. It loads the pooled, frozen ALDEx results from Additional Files 4–6 and skips the corresponding model-fitting/postprocessing step.
+- `recompute` is a staged, dependency-aware route. Depending on the notebook, it prepares raw count/metadata inputs, consumes individual per-stratum workbooks produced by the separate R/HPC workflow, or consumes postprocessed outputs created by an earlier notebook.
+
+These modes are intentionally asymmetric. A user can switch from a completed
+recompute workflow to `published` at any downstream point, but switching a
+downstream notebook from `published` to `recompute` does not create missing
+upstream or external outputs automatically. In particular, the Python notebooks
+do not fit ALDEx models themselves. After a notebook exports ALDEx inputs, run
+the corresponding R workflow and then rerun or continue the Python notebook for
+postprocessing. `RECOMPUTE_WORKFLOW.md` lists the boundary and prerequisites for
+every affected notebook.
 
 The pooled supplementary worksheets and individual recomputation files have different physical layouts. The shared loader splits each pooled worksheet by its exact stratum label so downstream notebook code receives the same dictionary-of-tables structure in either mode.
 

@@ -5,7 +5,7 @@ single-cell transcriptomic studies. These source workbooks are supplementary
 data from other publications and are **not redistributed in this repository**.
 
 Download the workbooks from the original publications, place them in
-`data/published_aging_gene_sets/`, and retain the filenames below. Alternatively,
+`external_data/published_aging_gene_sets/`, and retain the filenames below. Alternatively,
 set the `SCALE_AWARE_ST_AGING_GENE_DIR` environment variable to the folder that
 contains them.
 

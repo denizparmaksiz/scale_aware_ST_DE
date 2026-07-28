@@ -60,7 +60,7 @@ class RepositoryConfig:
             ),
             additional_data_dir=_env_path(
                 "SCALE_AWARE_ST_ADDITIONAL_DATA_DIR",
-                root / "Supplementary tables",
+                data_dir / "supplementary_files",
             ),
             external_data_dir=_env_path(
                 "SCALE_AWARE_ST_EXTERNAL_DATA_DIR", root / "external_data"

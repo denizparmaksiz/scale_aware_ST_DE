@@ -160,8 +160,11 @@ primary ALDEx postprocessing.
 
 Upload:
 
-- All six current files in `environment_exports/`, followed by cleaned
-  installable environment specifications once tested.
+- The historical provenance exports and the portable core/optional environment
+  specifications in `environment_exports/`.
+- `resources/allen_ccf/CCFv3OntologyStructure_u16.xlsx`, the exact small
+  ontology workbook read by notebook 04. Do not substitute
+  `atlas_info_KimRef_v2_segmentation.xlsx`.
 - The final minimal `src/scale_aware_st/` package.
 - The tested minimal subset of `kimlabspatial`; do not publish the current full
   historical directory unchanged.
@@ -186,7 +189,6 @@ and preparation steps for:
 - SenNet `SNT638.MWRV.378` raw CosMx expression and metadata files.
 - Allen MapMyCells marker JSON and precomputed-statistics HDF5.
 - Allen ABC Atlas metadata and WMB-10Xv2 expression partitions used by scANVI.
-- Allen CCF ontology workbook used by notebook 04.
 
 These are third-party inputs. The repository should validate expected files and
 provide download instructions; it should not silently substitute locally renamed
@@ -238,7 +240,7 @@ standalone workbooks are not publication inputs.
 | 01 | Three panel HDF5s; five section input triplets; study-generated CCF metadata CSVs for its displayed sections | Figure 1D loader/config code | Xenium, raw SenNet CosMx, three published aging workbooks | None |
 | 02 | Simulation source inputs only for full recomputation | Plotting notebook and simulation scripts | None | Additional File 3 for all plotting tables |
 | 03 | `adata_glia_aldex_pp.h5ad` | MERFISH master list, ALDEx scripts/manifest | None | Additional File 4 for pooled results |
-| 04 | Two primary MERFISH objects; four section input triplets; study-generated CCF metadata CSVs for its displayed sections | Plotting code | Allen CCF ontology | Additional File 4 for primary results |
+| 04 | Two primary MERFISH objects; four section input triplets; study-generated CCF metadata CSVs for its displayed sections | Plotting code and `CCFv3OntologyStructure_u16.xlsx` | None | Additional File 4 for primary results |
 | 05 | None beyond Additional File 4 | Frozen annotations and module dictionary | Optional live MyGene service only | Additional File 4 |
 | 06 | Primary MERFISH H5AD | Comparison code | Sun AnnData | Additional Files 4 and 5 |
 | 07 | None | Validation code | Sun AnnData and Table S7 | Additional File 5 |

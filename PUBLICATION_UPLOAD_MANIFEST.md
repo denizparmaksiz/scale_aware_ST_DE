@@ -1,6 +1,8 @@
 # Authoritative publication upload manifest
 
-Zenodo record: [10.5281/zenodo.21420404](https://doi.org/10.5281/zenodo.21420404)
+Reserved Zenodo DOI: `10.5281/zenodo.21420404`. During peer review, access is
+provided through the private preview link supplied with the manuscript; the DOI
+will not resolve until the record is published.
 
 Audit date: 2026-07-20
 
@@ -163,8 +165,7 @@ Upload:
 - The historical provenance exports and the portable core/optional environment
   specifications in `environment_exports/`.
 - `resources/allen_ccf/CCFv3OntologyStructure_u16.xlsx`, the exact small
-  ontology workbook read by notebook 04. Do not substitute
-  `atlas_info_KimRef_v2_segmentation.xlsx`.
+  ontology workbook read by notebook 04.
 - The final minimal `src/scale_aware_st/` package.
 - The tested minimal subset of `kimlabspatial`; do not publish the current full
   historical directory unchanged.
@@ -261,3 +262,18 @@ collection of the listed Zenodo files:
 5. Reduce and test `kimlabspatial`.
 6. Execute notebook smoke and end-to-end tests.
 7. Produce checksums and a final Zenodo archive layout.
+
+## 8. Before publishing the Zenodo record
+
+Zenodo records cannot be modified after publication, so complete these steps
+while the record is still a draft:
+
+1. Incorporate any additions or corrections arising during peer review.
+2. Replace the deposited `README.md` and `SHA256SUMS.txt` if the archive contents
+   change, and verify every checksum against the final uploaded files.
+3. Confirm all five archives open and preserve the documented directory layout.
+4. Confirm the reviewer preview still exposes the intended final draft files.
+5. Publish the record only after the manuscript data package is final.
+6. Verify that `https://doi.org/10.5281/zenodo.21420404` resolves publicly.
+7. Replace the peer-review wording in `README.md`, `DATA_DOWNLOADS.md`, this
+   manifest, and the deposited Zenodo README with the live DOI link.

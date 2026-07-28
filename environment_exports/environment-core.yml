@@ -1,0 +1,10 @@
+name: scale-aware-st-de
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.14
+  - pip
+  - git
+  - pip:
+      - -e .

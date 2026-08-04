@@ -78,17 +78,21 @@ Run these commands from the repository root:
 ```bash
 conda env create -f environment_exports/environment-core.yml
 conda activate scale-aware-st-de
+python -m pip install -e .
 ```
 
-The environment file creates Python 3.10.14 and installs this repository in
-editable mode with its tested core dependencies. Editable installation means
-changes to `src/scale_aware_st/` and `kimlabspatial/` are used immediately;
-it does not copy the source code into the environment.
+The environment file creates the Python 3.10.14 environment. The final command
+must be run from the repository root (the directory containing
+`pyproject.toml`); it installs the tested core dependencies and this
+repository in editable mode. Editable installation means changes to
+`src/scale_aware_st/` and `kimlabspatial/` are used immediately; it does not
+copy the source code into the environment.
 
 If the Conda environment already exists, update it from the repository root:
 
 ```bash
 conda env update -f environment_exports/environment-core.yml --prune
+python -m pip install -e .
 ```
 
 ### Manual installation into a fresh Python 3.10 environment

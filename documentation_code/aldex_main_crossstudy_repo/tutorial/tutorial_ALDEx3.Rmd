@@ -47,11 +47,31 @@ The count matrix must have genes in rows and cells in columns. Its first CSV
 column contains gene names, and its first row contains cell identifiers. The
 first metadata column must contain the same cell identifiers.
 
+When the R Markdown document is rendered, its relative paths are resolved from
+the `tutorial/` directory. The results workbook is therefore written to
+`documentation_code/aldex_main_crossstudy_repo/tutorial/output/`. The final
+code chunk prints the normalized absolute output path.
+
 # Load packages
+
+Install the tutorial dependencies once from the repository root:
+
+```r
+source(
+  "documentation_code/aldex_main_crossstudy_repo/tutorial/install_tutorial_dependencies.R"
+)
+```
+
+The installation script installs the packages used below and pins ALDEx3 to
+the exact standard-engine commit used for the manuscript. The historical
+reference environment used R 4.5.0 and `lme4` 1.1-37 on Linux. The tutorial
+has also completed successfully under R 4.6.1 and `lme4` 2.0.6 on Windows,
+but numerical equivalence across those versions has not been established.
 
 ```{r packages}
 library(ALDEx3)
 library(lme4)
+library(reformulas)
 library(writexl)
 library(ggplot2)
 ```
@@ -122,11 +142,19 @@ The first metadata column contains cell identifiers. Required columns are
 metadata <- read.csv(
   metadata_file,
   check.names = FALSE,
-  stringsAsFactors = FALSE
+  stringsAsFactors = FALSE,
+  colClasses = "character"
 )
 
-rownames(metadata) <- metadata[[1]]
-metadata <- metadata[, -1, drop = FALSE]
+cell_ids <- metadata[[1]]
+
+if (anyDuplicated(cell_ids)) {
+  stop("The metadata contains genuinely duplicated cell identifiers.")
+}
+
+rownames(metadata) <- cell_ids
+metadata[[1]] <- NULL
+metadata[] <- lapply(metadata, type.convert, as.is = TRUE)
 
 required_columns <- c("Age", "batch", "volume")
 missing_columns <- setdiff(required_columns, colnames(metadata))
@@ -238,7 +266,7 @@ age_binary + volume + (1 | batch)
 r_formula <- ~ age_binary + volume + (1 | batch)
 
 fixed_effect_design <- model.matrix(
-  lme4::nobars(r_formula),
+  reformulas::nobars(r_formula),
   data = metadata
 )
 
@@ -433,7 +461,7 @@ write_xlsx(
   path = output_file
 )
 
-output_file
+normalizePath(output_file, winslash = "/", mustWork = TRUE)
 ```
 
 # Session information

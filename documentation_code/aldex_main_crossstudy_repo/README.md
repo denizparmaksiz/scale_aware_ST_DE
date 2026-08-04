@@ -49,6 +49,25 @@ The launcher currently reproduces the historical cluster setup:
 
 These are site-specific paths and should be changed for another cluster.
 
+## Running the desktop tutorial
+
+The small `tutorial/tutorial_ALDEx3.Rmd` example uses the standard `lme4`
+engine rather than the historical BLMM engine. From the repository root,
+install its R dependencies with:
+
+```r
+source(
+  "documentation_code/aldex_main_crossstudy_repo/tutorial/install_tutorial_dependencies.R"
+)
+```
+
+The installer pins standard ALDEx3 to manuscript commit
+`8c05ad40c41279dffa05dc808167ffcd53207740` and installs the remaining
+tutorial packages from CRAN. The manuscript reference environment used R 4.5.0
+and `lme4` 1.1-37 on Linux. The tutorial has also been run successfully with
+R 4.6.1 and `lme4` 2.0.6 on Windows, but this portability check does not
+establish numerical equivalence to the manuscript environment.
+
 ## ALDEx3 and the `blmm` engine
 
 The manuscript analyses used two historical ALDEx3 installations:
